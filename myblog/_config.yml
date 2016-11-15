@@ -18,7 +18,7 @@ email: huizhu.zhao@xtalpi.com
 description: > # this means to ignore newlines until "baseurl:"
     When I was a child no one pointed me out as being cute or bright or good-looking. 
     If they had to say something they said I had sturdy little legs. 
-baseurl: "www" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "huizhuzhao.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
 github_username:  huizhuzhao
