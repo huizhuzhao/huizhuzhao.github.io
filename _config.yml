@@ -2,3 +2,4 @@ name: Huizhu Zhao's blog
 email: zhaohuizhu@ruc.edu.cn
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
+theme: minima
