@@ -5,6 +5,7 @@ permalink: /about/
 ---
 
 ![sea](http://obmpvqs90.bkt.clouddn.com/sea.jpg)
+
 ![image](http://obmpvqs90.bkt.clouddn.com/HIPS.png)
 I am working in Machine-Learning at Xtalpi.
 
