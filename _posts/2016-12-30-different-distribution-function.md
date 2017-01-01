@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 不同分布函数
+title: distribution functions
 date: 2016-12-30
 ---
 ## 高斯分布
