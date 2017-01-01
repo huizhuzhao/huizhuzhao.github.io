@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Baysian methods--An introduction
+title: baysian methods--an introduction
 date: 2016-12-29
 ---
 ### 特殊积分

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Boxes and Balls problem
+title: boxes and balls problem
 date: 2016-12-30
 ---
 
