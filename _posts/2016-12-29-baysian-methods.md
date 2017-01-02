@@ -16,7 +16,7 @@ $$\int\limits_{0}^{\infty}x^{2n+1}e^{-\alpha x^2}dx  =\frac{(2n)!!}{(2\alpha)^n}
  $$\qquad D: dataset,\quad \vec w: parameters $$
 
 ### 理解似然函数(likelihood function)
-![gaussin_distribution](/assets/images/gaussin_distribution.png)
+![gaussin_distribution](/images/gaussin_distribution.png)
  假设有$$n$$个观测值$$\vec x = \{x_1, x_2, .., x_n\}$$，它们满足独立同分布条件(independent and identically distribution)，分布函数为高斯函数
 
  $$N(x|\mu, \sigma) = \sqrt{\frac{1}{2\pi \sigma^2}} exp\{\frac{(x-\mu)^2}{2\sigma^2}\} $$
@@ -58,7 +58,7 @@ $$\sigma^2_{ML} = \frac{1}{N-1}\sum_i(x_i - \mu_{ML})^2$$
 * 理想情况下，如果硬币的正反面没有任何差别（除了可以分辨出正反面的差别外），则 $$p_0=p_1=1/2$$，  $$\mu=0$$
 * 但是，当我们连续扔了两次后，均出现正面，那么 $$\mu=0$$ 是否成立
 * 求解过程 (这里我们半定量的进行求解）
-![gaussin_bayse](/assets/images/gauss2_pRMkeev.png)
+![gaussin_bayse](/images/gauss2_pRMkeev.png)
 * 根据最大似然（maximium likelihood function）方法，我们的目标是寻找 $$\mu, \sigma^2$$， 从而最大化概率
 
   $$p(\vec x|\mu, \sigma)$$
@@ -81,7 +81,7 @@ $$p(\mu=\mu_{ML}, \sigma^2)< p(\mu=0, \sigma^2)$$
   *注 可以看出加入先验概率后，使得贝叶斯公式的结果介于另外两条曲线之间 (??)*
 
 ### 曲线拟合问题
-![](/assets/images/fit.png)
+![](/images/fit.png)
 我们现在有观测数据集
 $$(\vec x, \vec t) = \{(x_1, t_1), (x_2, t_2), .., (x_n, t_n)\}$$， 我们期望寻找参数 $$\vec w$$ 对该数据集进行多项式拟合，我们假定目标值 $$t$$ 满足高斯分布：
 $$p(t|x, \vec w, \beta) = N(t|y(x, \vec w), \beta^{-1})$$

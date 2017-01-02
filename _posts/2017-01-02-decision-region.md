@@ -1,6 +1,6 @@
 ---
 layout: post
-title: decision region
+title: 联合分布
 date: 2016-12-28
 categories: jekyll update
 ---
@@ -11,7 +11,7 @@ categories: jekyll update
   如下图所示黄色线和绿色线分别表示联合概率函数$$p(x, y_1)$$ 和 $$p(x, y_2)$$
 
   其中$$x\in (-\infty_, \infty_)$$为连续变量， $$y \in (y_1, y_2)$$为离散变量
-  ![two_gaussian_plots](/assets/images/two_gaussian_plots.png)
+  ![two_gaussian_plots](/images/two_gaussian_plots.png)
 
   在已知$$p(x, y_1)$$ 和 $$p(x, y_2)$$ 的前提下，我们来计算边缘概率(marginal probability) $$p(x)$$ 和 $$p(y)$$。
 
@@ -20,7 +20,7 @@ categories: jekyll update
 	 $$p(x) = p(x, y_1)+p(x, y_2)$$
 
      计算出来，即两条联合分布曲线的叠加，如下图中的蓝色线所示，且满足 $$\int_x p(x) dx = 1$$。
- ![three_gaussian_plots](/assets/images/three_gaussian_plots.png)
+ ![three_gaussian_plots](/images/three_gaussian_plots.png)
 
 
    * 因为$$y$$是离散变量，因此我们可以方便的计算出
