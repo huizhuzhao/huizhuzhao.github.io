@@ -2,9 +2,10 @@
 layout: page
 title: Cookies
 ---
-{% for cookie in site.cookies %}
-  <div class="cookie">
-    <h2><img src="{{ cookie.image_path }}" alt="{{ cookie.title }}">{{ cookie.title }}</a></h2>
-    {{ cookie.content }}
-  </div>
+{% for cookie in site.cookies limit:3 %}
+      <li>
+        <alt="{{ cookie.title }}"/>
+        <a href="{{ cookie.url }}">{{ cookie.title }}</a>
+        <p>{{ cookie.short-description }}</p>
+      </li>
 {% endfor %}

@@ -3,6 +3,8 @@ layout: post
 title: 分布函数
 date: 2016-12-30
 ---
+以下公式参考书籍 [Pattern recognition and machine learning (Bishop, Christopher)][PRML]
+
 ### 特殊积分
 
 * $$\int\limits_{-\infty}^{\infty}e^{-\alpha x^2}dx  =  \sqrt\frac{\pi}{\alpha} \qquad $$
@@ -99,3 +101,5 @@ $$
 $$
 Dir(\vec \mu|\vec{\alpha}) =\frac{\Gamma(\alpha_0)}{\Gamma(\alpha_1)...\Gamma(\alpha_K)} \prod_{k=1}^K\mu_k^{\alpha_k-1}
 $$
+
+[PRML]: http://www.springer.com/us/book/9780387310732
