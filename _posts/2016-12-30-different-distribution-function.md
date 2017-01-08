@@ -1,6 +1,6 @@
 ---
 layout: post
-title: distribution functions
+title: 分布函数
 date: 2016-12-30
 ---
 ## 高斯分布
@@ -22,20 +22,21 @@ $$
 ## beta 分布
 beta 分布取值区间为 $$[0, 1]$$, 这种分布函数有两个参数 $$a$$ 和 $$b$$， 下面是 $$a, b$$ 取不同值的情况下 beta 分布的示意图
 ![beta_distribution](/images/beta_distribution.jpg)
-在引入 beta 分布函数之前，我们先介绍 Gamma 函数
-
-$$\Gamma(x) \equiv\int_0^\infty u^{x-1}e^{-u}du$$
-
-Gamma 函数具有如下性质
-
-$$\Gamma(x+1) = x\Gamma(x), \qquad \Gamma(n+1) = n!$$
-![Gamma_function](/images/600px-Gamma_plot.svg.png)
 
 beta 函数定义如下：
 
 $$beta(\mu|a, b) = \frac{\Gamma(a+b)}{\Gamma(a)\Gamma(b)}\:\mu^{a-1}(1-\mu)^{b-1} \qquad \mu \in (0, 1)$$
 
 $$E(\mu) = \frac{a}{a+b}  \qquad var(\mu)=\frac{ab}{(a+b)^2(a+b+1)}$$
+
+上式中 $$\Gamma$$　表示 Gamma 函数
+
+$$\Gamma(x) \equiv\int_0^\infty u^{x-1}e^{-u}du$$
+
+且具有如下性质
+
+$$\Gamma(x+1) = x\Gamma(x), \qquad \Gamma(n+1) = n!$$
+![Gamma_function](/images/600px-Gamma_plot.svg.png)
 
 ## 伯努利分布
 考虑随机变量 $$x\in [0, 1]$$， 并且参数 $$\mu$$ 表示 $$x=1$$ 的概率，则伯努利分布可表示为
