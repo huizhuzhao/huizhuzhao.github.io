@@ -1,22 +1,33 @@
 ---
 layout: post
-title: baysian methods--an introduction
+title: 理解贝叶斯公式和似然函数
 date: 2016-12-29
 ---
-### 特殊积分
 
-* $$\int\limits_{-\infty}^{\infty}e^{-\alpha x^2}dx  =  \sqrt\frac{\pi}{\alpha} \qquad $$
-$$\int\limits_{-\infty}^{\infty}x^{2n}e^{-\alpha x^2}dx = \frac{(2n-1)!!}{(2\alpha)^n}\sqrt\frac{\pi}{\alpha} $$
-
-* $$\int\limits_{0}^{\infty}xe^{-\alpha x^2}dx  =\frac{1}{2\alpha} \qquad $$
-$$\int\limits_{0}^{\infty}x^{2n+1}e^{-\alpha x^2}dx  =\frac{(2n)!!}{(2\alpha)^n}\frac{1}{2\alpha} $$
-
-### 贝叶斯公式
-* $$ p(\vec w|D)= \frac{p(D|\vec w)p(\vec w)}{p(D)} $$
- $$\qquad D: dataset,\quad \vec w: parameters $$
+假如现在有一枚硬币，我们通过观测连续地抛硬币后，硬币正反面出现的情况来估计硬币正面朝上的概率 $$\mu$$。这里假设连续抛出 $$N$$ 次，正反面出现的情况为 $$X=\{x_1, x_2, ..., x_N\}$$， 其中 $$x_i\in \{0, 1\} $$ ($$0$$代表正面，$$1$$代表反面)。根据数据 $$X$$ 对参数 $$\mu$$ 进行的估计的方法有如下两种：
+1. **最大似然** 方法
+2. **贝叶斯** 方法
 
 ### 理解似然函数(likelihood function)
+根据上面提到的硬币问题，如果存在 $$\mu$$（？），那么该问题便可以看做为伯努利实验，即每次扔硬币正面朝上的概率为 $$\mu$$， 反面朝上的概率为 $$1-\mu$$，事件 $$X$$ 发生的概率为
+
+ $$p(X|\mu) = \prod_i p(x_i|\mu) = \prod_i \mu^{x_i}(1-\mu)^{1-x_i}$$
+
+ 此概率函数便称作似然函数(likelihood function)。最大似然方法认为如果存在
+ $$\mu = \mu_0$$ 能够使得似然函数取得最大值，那么 $$\mu_0$$ 便是我们要估计的参数值。因此我们将 $$\mu$$ 看做函数 $$p(X|\mu)$$ 的变量，最大化 $$p(X|\mu)$$ 等价于最大化其对数：
+
+ $$ln p(X|\mu) = \sum_{n=1}^N \{x_n ln \mu + (1-x_n) ln (1 - \mu)\}$$
+
+上式对 $$\mu$$ 求导，并使得导数值为0，便可得到 $$\mu_0 = \frac{1}{N}\sum_{n=1}^Nx_n$$。
+
+ 如果我们连续扔了三次硬币，并且硬币全都正面朝上，那么根据最大似然方法可以得到 $$\mu_0=1$$。根据此估计结果，那么第四次扔硬币正面朝上的概率也为 $$1$$。显然这样极端的结论并不成立，接下来介绍贝叶斯方法，该方法得出的结论将更加合理。
+
+ ### 贝叶斯公式
+ * $$ p(\vec w|D)= \frac{p(D|\vec w)p(\vec w)}{p(D)} $$
+  $$\qquad D: dataset,\quad \vec w: parameters $$
+
 ![gaussin_distribution](/images/gaussin_distribution.png)
+
  假设有$$n$$个观测值$$\vec x = \{x_1, x_2, .., x_n\}$$，它们满足独立同分布条件(independent and identically distribution)，分布函数为高斯函数
 
  $$N(x|\mu, \sigma) = \sqrt{\frac{1}{2\pi \sigma^2}} exp\{\frac{(x-\mu)^2}{2\sigma^2}\} $$

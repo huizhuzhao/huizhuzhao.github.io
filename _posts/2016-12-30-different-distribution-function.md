@@ -3,6 +3,14 @@ layout: post
 title: distribution functions
 date: 2016-12-30
 ---
+### 特殊积分
+
+* $$\int\limits_{-\infty}^{\infty}e^{-\alpha x^2}dx  =  \sqrt\frac{\pi}{\alpha} \qquad $$
+$$\int\limits_{-\infty}^{\infty}x^{2n}e^{-\alpha x^2}dx = \frac{(2n-1)!!}{(2\alpha)^n}\sqrt\frac{\pi}{\alpha} $$
+
+* $$\int\limits_{0}^{\infty}xe^{-\alpha x^2}dx  =\frac{1}{2\alpha} \qquad $$
+$$\int\limits_{0}^{\infty}x^{2n+1}e^{-\alpha x^2}dx  =\frac{(2n)!!}{(2\alpha)^n}\frac{1}{2\alpha} $$
+
 ## 高斯分布
 * 一元高斯
 
