@@ -4,6 +4,7 @@ title: Text-editors
 ---
 
 ---
+
 ## latex
 * latex for ubuntu [https://help.ubuntu.com/community/LaTeX][latex-ubuntu]
 * markdown latex
@@ -16,7 +17,9 @@ title: Text-editors
 [latex-ubuntu]: https://help.ubuntu.com/community/LaTeX
 [mathjax]: http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
 [mathjax-formular]: http://mlworks.cn/posts/introduction-to-mathjax-and-latex-expression/
+
 ---
+
 ## Atom
 * [Atom Flight Manual][atom-flight-manual]
 * [Getting Started][getting-started]
@@ -37,6 +40,7 @@ title: Text-editors
 [getting-started]: http://flight-manual.atom.io/getting-started/sections/why-atom/
 
 ---
+
 ## Vim
 * Vim YouCompleteMe
 
