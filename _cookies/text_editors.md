@@ -65,12 +65,16 @@ title: Text-editors
 
   `vim paste`
 
- [url-1](http://linux.cn/article-2751-1.html)
- [url-2](http://www.cnblogs.com/jianyungsun/archive/2011/03/19/1988855.html)
- [url-3](http://linux.vbird.org/linux_basic/0310vi.php#vim_ws)
+  [url-1](http://linux.cn/article-2751-1.html)
+  [url-2](http://www.cnblogs.com/jianyungsun/archive/2011/03/19/1988855.html)
+  [url-3](http://linux.vbird.org/linux_basic/0310vi.php#vim_ws)
+
+* [vim 相对行号](http://jeffkreeftmeijer.com/2012/relative-line-numbers-in-vim-for-super-fast-movement/)
+
+  [vim 配置博客](http://blog.csdn.net/wklken/article/details/9076621)
 
 
----
+
 [vim-colorscheme]: http://cocopon.me/app/vim-color-gallery/
 [vim-colorscheme-2]: https://github.com/altercation/vim-colors-solarized
 [youcompleteme]: https://github.com/Valloric/YouCompleteMe

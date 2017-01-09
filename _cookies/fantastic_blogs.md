@@ -98,6 +98,9 @@ title: Fantastic ML blogs
 * 刘帝伟的博客
   [http://blog.csdn.net/dream_angel_z](http://blog.csdn.net/dream_angel_z)
 
+* What Drives Real GDP Growth?
+  [Turing Finance](http://www.turingfinance.com/what-drives-real-gdp-growth-part-one/)
+  
 ----
 
 * **spaCy**
