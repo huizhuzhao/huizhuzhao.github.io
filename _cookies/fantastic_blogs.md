@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Fantastic blogs
+title: Fantastic ML blogs
 ---
 
 * GitXiv

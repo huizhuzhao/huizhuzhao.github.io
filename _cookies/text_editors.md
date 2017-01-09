@@ -18,8 +18,8 @@ title: Text-editors
 [mathjax-formular]: http://mlworks.cn/posts/introduction-to-mathjax-and-latex-expression/
 ---
 ## Atom
-* Tutorial [http://flight-manual.atom.io/][atom-tutorial]
-
+* [Atom Flight Manual][atom-flight-manual]
+* [Getting Started][getting-started]
 * shortcut keys
   * run python script
   `ctrl+shift+b`
@@ -33,7 +33,8 @@ title: Text-editors
   * open a file/directory
   `ctrl+o`, `ctrl+shift+o`
 
-[atom-tutorial]: http://flight-manual.atom.io/
+[atom-flight-manual]: http://flight-manual.atom.io/
+[getting-started]: http://flight-manual.atom.io/getting-started/sections/why-atom/
 
 ---
 ## Vim
