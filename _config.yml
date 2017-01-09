@@ -35,6 +35,10 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+
+collections:
+  - cookies
+  
 collections:
     cookies:
       output: true

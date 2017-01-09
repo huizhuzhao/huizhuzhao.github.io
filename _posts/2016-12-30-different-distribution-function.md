@@ -4,7 +4,7 @@ title: 分布函数
 date: 2016-12-30
 ---
 以下公式参考书籍 [Pattern recognition and machine learning (Bishop, Christopher)][PRML]
-
+abc
 ### 特殊积分
 
 * $$\int\limits_{-\infty}^{\infty}e^{-\alpha x^2}dx  =  \sqrt\frac{\pi}{\alpha} \qquad $$

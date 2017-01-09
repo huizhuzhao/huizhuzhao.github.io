@@ -4,7 +4,7 @@ title: Cookies
 ---
 {% for cookie in site.cookies %}
       <li>
-        <alt="{{ cookie.title }}"/>
+        <src="{{ cookie.title }}" alt="{{ cookie.title }}"/>
         <a href="{{ cookie.url }}">{{ cookie.title }}</a>
         <p>{{ cookie.short-description }}</p>
       </li>
