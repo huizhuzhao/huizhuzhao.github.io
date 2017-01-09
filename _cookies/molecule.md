@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: Molecule
 image_path: http://obmpvqs90.bkt.clouddn.com/c1ccccc1o.jpg
 ---
