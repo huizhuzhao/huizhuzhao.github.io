@@ -6,6 +6,14 @@ title: Python
 
 ## Anaconda
 
+* 使用anaconda 安装python包的路径为
+
+  `~/anaconda2/lib/python2.7/site-packages/`
+
+  使用 `sudo pip`命令安装包的目录为：
+
+  `/usr/local/lib/python2.7/dist-packages/`
+
 * Official website: [http://anaconda.org/][anaconda-url]
 
 * install packages steps
@@ -22,6 +30,57 @@ title: Python
 
 [anaconda-url]: http://anaconda.org/
 [using-conda]: http://conda.pydata.org/docs/using/using.html
+
+* 基类
+
+  ```
+  class A(object):
+    def __init__(self):
+      pass
+
+    def get_output_shape_for(self):
+      """
+      write something
+      """
+      raise NotImplementedError
+  ```
+
+* **slice** 切片
+  ```
+  >>> slice
+  <type 'slice'>
+  >>> slice(None)
+  slice(None, None, None) # start, stop, step
+
+  >>> ls = range(10)
+  >>> print ls[slice(0, 10, 2)]
+  [0, 2, 4, 6, 8]
+  >>>print ls[slice(None)]
+  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  ```
+
+* **zip(*)**
+
+  ```
+  >>> ls = [(1, 2, 3), (4, 5, 6), (7, 8, 9)]
+  >>> for s in zip(ls):
+        print s
+  ((1, 2, 3), )
+  ((4, 5, 6), )
+  ((7, 8, 9), )
+  >>> for s in zip(*ls):
+        print s
+  (1, 4, 7)
+  (2, 5, 8)
+  (3, 6, 9)
+  ```
+
+* generator
+
+  ```
+  >>> print ((s for s in range(3)))
+  <type 'generator'>
+  ```
 
 * 装饰器
 
@@ -54,7 +113,7 @@ title: Python
 https://docs.python.org/2/library/functions.html)
 
   [os.path offical](https://docs.python.org/2/library/os.path.html)
-  
+
   ```
   shutil.copy("oldfile","newfile")  ＃python 移动文件，oldfile只能是文件夹，newfile可以是文件，也可以是目标目录
   os.path.join(name1, name2)
