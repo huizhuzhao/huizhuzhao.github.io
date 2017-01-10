@@ -46,6 +46,7 @@ title: Python
   ```
 
 * **slice** 切片
+
   ```
   >>> slice
   <type 'slice'>
