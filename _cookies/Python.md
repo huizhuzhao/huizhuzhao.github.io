@@ -39,7 +39,7 @@ title: Python
         print 'setter'
         self._name = name
   ```
-  
+
   ```
   >>> a = A()
   setter
@@ -49,9 +49,12 @@ title: Python
 * python 处理文件
 
   [os.path 模块博客](http://www.cnblogs.com/dkblog/archive/2011/03/25/1995537.html)
+
   [python built-in functions](python built-in
 https://docs.python.org/2/library/functions.html)
+
   [os.path offical](https://docs.python.org/2/library/os.path.html)
+  
   ```
   shutil.copy("oldfile","newfile")  ＃python 移动文件，oldfile只能是文件夹，newfile可以是文件，也可以是目标目录
   os.path.join(name1, name2)
