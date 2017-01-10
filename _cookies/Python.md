@@ -3,6 +3,7 @@ layout: page
 title: Python
 ---
 ---
+
 ## Anaconda
 
 * Official website: [http://anaconda.org/][anaconda-url]
@@ -38,6 +39,7 @@ title: Python
         print 'setter'
         self._name = name
   ```
+  
   ```
   >>> a = A()
   setter
