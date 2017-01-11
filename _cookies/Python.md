@@ -125,6 +125,7 @@ https://docs.python.org/2/library/functions.html)
   ```
 
 * python 简单的数据操作
+
   ```
   s = '123+'
   s[:s.find('+')] == '123'
@@ -132,29 +133,36 @@ https://docs.python.org/2/library/functions.html)
   dic.setdefault('a', []) # dic.get('a', []) and also set dic['a']=[] if 'a' not in dic
   print __file__
   ```
+
   ```
   from numpy.matlib import repmat
   repmat(x, m,n) #类似于matlab中的repmat函数
   ```
 
 * `iterator` vs `generator`
+
   [blog-using iterators and generators](http://anandology.com/blog/using-iterators-and-generators/)
 
   `next(generator_name)`
   *# The transformation of images is not under thread lock so it can be done in parallel* 受线程保护的程序不能够并行，
 
 * python 互相导入
-  `test1.py`, `test2.py`
-  两个文件可以互相导入
+
+  `test1.py`, `test2.py`  两个文件可以互相导入
 
 * [line_profiler](https://github.com/rkern/line_profiler#frequently-asked-questions)
-line_profiler is a module for doing line-by-line profiling of functions. kernprof is a convenient script for running either line_profiler or the Python standard library's cProfile or profile modules, depending on what is available.
+  
+  line_profiler is a module for doing line-by-line profiling of functions. kernprof is a convenient script for running 
+  
+  either line_profiler or the Python standard library's cProfile or profile modules, depending on what is available.
 
 * 记忆体、递归
+  
   `@functools.lru_cache(maxsize=None)`
   [wiki](https://en.wikipedia.org/wiki/Memoization)
 
 * python class
+  
   ```
   class A():
     '''
@@ -164,6 +172,7 @@ line_profiler is a module for doing line-by-line profiling of functions. kernpro
             pass
     x = 10
   ```
+  
   ```    
   >>> A.__dict__
   {'x': 10, '__module__': '__main__', '__doc__': '\n\tclass A description\n\t', '__init__': <function __init__ at 0x7f5335e46488>}
@@ -174,7 +183,9 @@ line_profiler is a module for doing line-by-line profiling of functions. kernpro
 * [blog-super-considered-super](https://rhettinger.wordpress.com/2011/05/26/super-considered-super/) by [Deep Thoughts by Raymond Hettinger](https://rhettinger.wordpress.com/)
 
   super() is in the business of delegating method calls to some class in the instance’s ancestor tree
+  
   [Things to Know About Python Super](http://www.artima.com/weblogs/viewpost.jsp?thread=236275)
+  
   [What does super do in Python?-stackoverflow](http://stackoverflow.com/questions/222877/what-does-super-do-in-python/33469090#33469090)
 
 * 下面两段代码在 blocks_dict 很大时的速率相差很大，后者明显优于前者
