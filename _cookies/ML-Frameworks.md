@@ -3,6 +3,10 @@ layout: page
 title: ML-frameworks
 ---
 
+### Theano
+
+* [Basic Tensor Functionality](http://deeplearning.net/software/theano/library/tensor/basic.html)
+
 * Spark MLlib [http://spark.apache.org/mllib/](http://spark.apache.org/mllib/)
 
 * PyMC3 [github](https://github.com/pymc-devs/pymc3)
