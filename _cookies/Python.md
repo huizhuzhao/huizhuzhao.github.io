@@ -144,7 +144,8 @@ https://docs.python.org/2/library/functions.html)
   [blog-using iterators and generators](http://anandology.com/blog/using-iterators-and-generators/)
 
   `next(generator_name)`
-  *# The transformation of images is not under thread lock so it can be done in parallel* 受线程保护的程序不能够并行，
+
+  # The transformation of images is not under thread lock so it can be done in parallel* 受线程保护的程序不能够并行，
 
 * python 互相导入
 
@@ -153,7 +154,6 @@ https://docs.python.org/2/library/functions.html)
 * [line_profiler](https://github.com/rkern/line_profiler#frequently-asked-questions)
   
   line_profiler is a module for doing line-by-line profiling of functions. kernprof is a convenient script for running 
-  
   either line_profiler or the Python standard library's cProfile or profile modules, depending on what is available.
 
 * 记忆体、递归
@@ -215,6 +215,7 @@ https://docs.python.org/2/library/functions.html)
   ![python-versions](/images/cookies/python_versions.png)
 
   vim ~/.bashrc
+
   ```
   # add this line in the file bottom
   alias python='/usr/bin/python2.7'
@@ -222,12 +223,15 @@ https://docs.python.org/2/library/functions.html)
   ```
 
 * python 优雅的操作字典
+  
   [https://www.linuxzen.com/python-you-ya-de-cao-zuo-zi-dian.html](https://www.linuxzen.com/python-you-ya-de-cao-zuo-zi-dian.html)
 
 * Numpy 读.txt文件，生成矩阵
-[http://hyry.dip.jp/tech/book/page/scipy/numpy_file.html](http://hyry.dip.jp/tech/book/page/scipy/numpy_file.html)
+  
+  [http://hyry.dip.jp/tech/book/page/scipy/numpy_file.html](http://hyry.dip.jp/tech/book/page/scipy/numpy_file.html)
 
 
 * 美团点评技术团队
+  
   [http://tech.meituan.com/](http://tech.meituan.com/)
   [http://www.w3ctech.com/](http://www.w3ctech.com/)
