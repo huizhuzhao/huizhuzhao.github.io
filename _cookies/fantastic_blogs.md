@@ -3,6 +3,10 @@ layout: page
 title: Fantastic ML blogs
 ---
 
+* [Bharath Ramsundar](http://rbharath.github.io/) Deep Learning for Drug Discovery Researcher
+
+  deepchem [https://github.com/deepchem/deepchem](https://github.com/deepchem/deepchem) *Low Data Drug Discovery with One-shot Learning*
+
 * GitXiv
 
   [http://www.gitxiv.com/][gitxiv]
