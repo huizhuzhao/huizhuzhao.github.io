@@ -3,13 +3,9 @@ layout: page
 title: Fantastic ML blogs
 ---
 
-* [Bharath Ramsundar](http://rbharath.github.io/) Deep Learning for Drug Discovery Researcher
+* [colah's blog][colah-blog]
 
-  deepchem [https://github.com/deepchem/deepchem](https://github.com/deepchem/deepchem) *Low Data Drug Discovery with One-shot Learning*
-
-* GitXiv
-
-  [http://www.gitxiv.com/][gitxiv]
+  ![understanding-lstm](/images/cookies/understanding-lstm.png)
 
 * [Andrej Karpathy blog][karpathy-blog]
 
@@ -30,10 +26,6 @@ title: Fantastic ML blogs
 * [Predicting Depth, Surface Normals and Semantic Labels with a Common Multi-Scale Convolutional Architecture][cnn-depth-surface]
 
   ![cnn-depth-normals-labels](/images/cookies/cnn-depth-normals-labels.png)
-
-* [colah's blog][colah-blog]
-
-  ![understanding-lstm](/images/cookies/understanding-lstm.png)
 
 * [The Unreasonable Effectiveness of Recurrent Neural Networks][rnn-karpathy] (by [Andrej Karpathy][karpathy-blog])
 

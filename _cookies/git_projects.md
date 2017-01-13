@@ -24,3 +24,25 @@ title: Github projects
 * [TensorFlow Examples](https://github.com/aymericdamien/TensorFlow-Examples)
 
 * [theano-based RNN examples and their Bidirectional version](https://github.com/uyaseen/theano-recurrence])
+
+----
+### Tech webs
+
+* **spaCy**
+  NLP tools: If your application needs to process entire web dumps, spaCy is the library you want to be using.
+
+  [https://spacy.io/](https://spacy.io/)
+
+* **Sigopt** A company trading optimization algorithms
+
+  [https://sigopt.com/#products](https://sigopt.com/#products)
+
+* **Enlitic** uses deep learning to make doctors faster and more accurate
+
+  [http://www.enlitic.com/index.html](http://www.enlitic.com/index.html)
+
+* **Cyclica** (Compuational Drug Discovery)
+
+  [https://cyclicarx.com/about-us/our-team/](https://cyclicarx.com/about-us/our-team/)
+
+* [voicecode.io](http://voicecode.io/)
