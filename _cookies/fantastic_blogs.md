@@ -11,6 +11,8 @@ title: Fantastic ML blogs
 
   ![andrej-karpathy-blog](/images/cookies/andrej-karpathy-logo.png)
 
+  [ConvNetJS](http://cs.stanford.edu/people/karpathy/convnetjs/) Deep Learning in your browser
+
 * loss functions
 
   [http://lossfunctions.tumblr.com/][lossfunctions]
