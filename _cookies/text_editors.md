@@ -13,6 +13,20 @@ title: Text-editors
 
 * Mathjax与LaTex公式简介 [url][mathjax-formular]
 
+* `Hello world!`
+  1. 使用文本编辑器将如下内容写入文件 *latex_test.tex* 中
+    ```
+      \documentclass{article}
+      \begin{document}
+        Hello world!
+      \end{document}
+    ```
+  2. Linux系统下使用命令 `latex latex_test.tex` 将会得到 *latex_test.dvi* 文件；
+    
+      可以通过命令 `xdvi latex_test.dvi` 查看该文件中的内容。
+
+  3. 使用命令 `dvipdf latex_test.dvi` 生成 **latex_test.pdf** 文件。
+
 
 [latex-ubuntu]: https://help.ubuntu.com/community/LaTeX
 [mathjax]: http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
