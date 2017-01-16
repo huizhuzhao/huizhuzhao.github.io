@@ -46,3 +46,6 @@ title: Github projects
   [https://cyclicarx.com/about-us/our-team/](https://cyclicarx.com/about-us/our-team/)
 
 * [voicecode.io](http://voicecode.io/)
+
+* **rapidminer** Data Science Behind Every Decision. 
+  [https://rapidminer.com/](https://rapidminer.com/)
