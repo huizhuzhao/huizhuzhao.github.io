@@ -85,8 +85,11 @@ A chinese version of blog [Neural Networks, Manifolds, and Topology](http://cola
 定理：如果权重矩阵 $$W$$ 是非奇异的，那么对于输入/输出都是 $$N$$ 维的层，它就是同胚的。
 
 证明：
+
  1. 假设 $$W$$ 具有非零行列式，那么操作 $$Wx$$ 就是一个双射线性函数，并且具有线性的逆。已知线性函数具有连续性，因此此操作是同胚的。
+
  2. 平移操作，即 $$+b$$，是同胚的。
+
  3. $$tanh$$ (包括 $$sigmoid$$ 和 $$softplus$$ (ln(1+e^x))，但不包括 $$ReLU$$) 是连续函数，并且具有连续的逆函数。并且在我们所考虑的
  领域和范围内他们是双射的。逐点进行函数变换也是同胚的。
 
@@ -102,9 +105,8 @@ $$ A = \{ x | d(x, 0)<1/3\}$$
 
 $$ B = \{ x | 2/3 < d(x, 0)< 1\}$$
 
-<div class="fig figcenter fighighlight">
-  <img src="/images/nn_manifolds_topology/topology_base.png" align="absmiddle" width="300">
-  <div class="figcaption"><br> 其中红色代表 A，蓝色代表 B<br>
-  </div>
-</div>
+![topology-base](http://ok8deh2w3.bkt.clouddn.com/topology_base.png?imageView2/0/w/300)
 
+其中红色代表 A，蓝色代表 B
+
+断言：如果一个神经网络模型每一层神经元个数均小于 3，那么无论该模型深度是多少，都无法对上面的数据集进行正确分类。
