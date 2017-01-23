@@ -14,5 +14,7 @@ title: Tools blogs
 [ben-balter-github]: http://ben.balter.com/
 
 * 七牛文档（改变图片尺寸，包括 gif格式）
- 
-  [http://docs.qiniu.com/api/v6/image-process.html#imageMogr](http://docs.qiniu.com/api/v6/image-process.html#imageMogr)
+  
+  图片API [http://developer.qiniu.com/code/v6/api/kodo-api/image/#imageview2](http://developer.qiniu.com/code/v6/api/kodo-api/image/#imageview2)
+
+  七牛开发者 [http://developer.qiniu.com/](http://developer.qiniu.com/)
