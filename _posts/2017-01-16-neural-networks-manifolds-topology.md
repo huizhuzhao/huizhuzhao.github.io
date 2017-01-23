@@ -2,6 +2,7 @@
 layout: post
 title:  神经网络，流形和拓扑
 date:   2017-01-16
+comments: true
 ---
 A chinese version of blog [Neural Networks, Manifolds, and Topology](http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/) (by [Christopher Olah](http://colah.github.io/about.html))
 
@@ -44,7 +45,7 @@ A chinese version of blog [Neural Networks, Manifolds, and Topology](http://cola
 
 下图中的每一维对应于隐藏层中一个神经元的激活情况。
 
-![nn_one_hidden_layer_3](/images/nn_one_hidden_layer_3.png)
+ ![nn_one_hidden_layer_3](/images/nn_one_hidden_layer_3.png)
 
 ### 网络层的连续可视化
 
@@ -58,10 +59,16 @@ A chinese version of blog [Neural Networks, Manifolds, and Topology](http://cola
  2. 通过向量 $$b$$ 进行平移
  3. 逐点进行 $$tanh$$ 函数变换
 
+我们可以将其看做一种连续变换，如下图所示
+
+![](http://ojwkl64pe.bkt.clouddn.com/1layer.gif?imageView/2/w/300/format/gif)
+
 其他类型的网络层所做的工作也类似，即仿射变换，及随后逐点应用单调激活函数。
 
 我们通过上面的步骤来理解更为复杂的神经网络模型。比如，下面的网络将两条轻微交缠在一起的螺旋线进行分类，网络中使用了四个隐藏层。随着时间，
 我们看到模型将“原始”数据变换到它所学习到的更高维度的特征表示，从而使得一开始纠缠在一起的螺旋线，在高维空间里变得线性可分。
+
+![](http://ojwkl64pe.bkt.clouddn.com/spiral_1.gif?imageView/2/w/300/format/gif)
 
 另一方面，下面的网络模型虽然也包含多个隐藏层，但并不能把两条纠缠更为紧密的螺旋线成功的分类。
 

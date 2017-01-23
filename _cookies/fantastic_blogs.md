@@ -11,8 +11,6 @@ title: Fantastic ML blogs
 
   ![andrej-karpathy-blog](/images/cookies/andrej-karpathy-logo.png)
 
-  [ConvNetJS](http://cs.stanford.edu/people/karpathy/convnetjs/) Deep Learning in your browser
-
 * loss functions
 
   [http://lossfunctions.tumblr.com/][lossfunctions]
@@ -98,26 +96,9 @@ title: Fantastic ML blogs
 
 * What Drives Real GDP Growth?
   [Turing Finance](http://www.turingfinance.com/what-drives-real-gdp-growth-part-one/)
+
+* [Harold Pimentel](http://pimentel.github.io/)
   
-----
-
-* **spaCy**
-  NLP tools: If your application needs to process entire web dumps, spaCy is the library you want to be using.
-
-  [https://spacy.io/](https://spacy.io/)
-
-* **Sigopt** A company trading optimization algorithms
-
-  [https://sigopt.com/#products](https://sigopt.com/#products)
-
-* **Enlitic** uses deep learning to make doctors faster and more accurate
-
-  [http://www.enlitic.com/index.html](http://www.enlitic.com/index.html)
-
-* **Cyclica** (Compuational Drug Discovery)
-
-  [https://cyclicarx.com/about-us/our-team/](https://cyclicarx.com/about-us/our-team/)
-
 
 [gitxiv]: http://www.gitxiv.com/
 [karpathy-blog]: http://karpathy.github.io/

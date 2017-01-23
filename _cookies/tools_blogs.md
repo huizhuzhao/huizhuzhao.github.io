@@ -12,3 +12,7 @@ title: Tools blogs
 * [GitHub hosted comments for GitHub hosted blogs](http://ivanzuzak.info/2011/02/18/github-hosted-comments-for-github-hosted-blogs.html)
 
 [ben-balter-github]: http://ben.balter.com/
+
+* 七牛文档（改变图片尺寸，包括 gif格式）
+ 
+  [http://docs.qiniu.com/api/v6/image-process.html#imageMogr](http://docs.qiniu.com/api/v6/image-process.html#imageMogr)
