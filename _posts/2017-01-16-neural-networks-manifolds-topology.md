@@ -24,9 +24,9 @@ A chinese version of blog [Neural Networks, Manifolds, and Topology](http://cola
 
 ![olah_two_curves](/images/olah_two_curves.png)
 
-想要可视化神经网络的行为，一种直接的方式便是去查看它是怎样分类每一个可能的数据点，这种方式同样适用于其他分类算法。
+想要对神经网络模型或者其他算法模型的行为进行可视化，一种直接的方式便是去观测它对每一个可能的数据点是如何进行分类的。
 
-我们先以最简单的一类神经网络模型为例，该网络仅有一个输入层和一个输出层。该网络仅是简单的用一条直线对两类数据点进行区分。如下图所示
+为此，我们先以最简单的一类神经网络模型为例，该网络仅有一个输入层和一个输出层。该网络仅是简单的用一条直线对两类数据点进行区分。如下图所示
 
 ![olah_two_curves_2](/images/olah_two_curves_2.png)
 
@@ -60,15 +60,20 @@ A chinese version of blog [Neural Networks, Manifolds, and Topology](http://cola
  3. 逐点进行 $$tanh$$ 函数变换
 
 我们可以将其看做一种连续变换，如下图所示
-
+<!---
 ![](http://ojwkl64pe.bkt.clouddn.com/1layer.gif?imageView2/1/w/400)
+-->
+![](http://ojwkl64pe.bkt.clouddn.com/1layer.gif)
 
 其他类型的网络层所做的工作也类似，即仿射变换，及随后逐点应用单调激活函数。
 
 我们通过上面的步骤来理解更为复杂的神经网络模型。比如，下面的网络将两条轻微交缠在一起的螺旋线进行分类，网络中使用了四个隐藏层。随着时间，
 我们看到模型将“原始”数据变换到它所学习到的更高维度的特征表示，从而使得一开始纠缠在一起的螺旋线，在高维空间里变得线性可分。
 
+<!---
 ![](http://ojwkl64pe.bkt.clouddn.com/spiral_1.gif?imageView2/0/w/400)
+-->
+![](/images/nn_manifolds_topology/spiral.2.2-2-2-2-2-2-2.gif)
 
 另一方面，下面的网络模型虽然也包含多个隐藏层，但并不能把两条纠缠更为紧密的螺旋线成功的分类。
 
@@ -77,10 +82,10 @@ A chinese version of blog [Neural Networks, Manifolds, and Topology](http://cola
 
 ### tanh 层的拓扑
 
-网络中的每一个层(layer) 都会对输入特征空间进行拉伸和压缩，但并不会对其进行切割，打破或者折叠。直觉上，我们可以认为层保持了特征数据的拓扑性质。
+网络中的每一个层(layer) 都会对输入特征空间进行拉伸和压缩，但并不会对其进行切割、打破或者折叠。直觉上，我们可以认为层保持了特征数据的拓扑性质。
 例如，某个集合的连接性并不会在经过层的处理后发生改变。
 
-像上面这种不改变集合拓扑性质的转换操作被称作同胚(homeomorphisms)。形式上，这种操作是双向连续函数的双射。
+像上面这种不改变集合拓扑性质的转换操作被称作同胚 (homeomorphisms)。形式上，这种操作是双向连续函数的双射。
 
 定理：如果权重矩阵 $$W$$ 是非奇异的，那么对于输入/输出都是 $$N$$ 维的层，它就是同胚的。
 
@@ -90,7 +95,7 @@ A chinese version of blog [Neural Networks, Manifolds, and Topology](http://cola
 
  2. 平移操作，即 $$+b$$，是同胚的。
 
- 3. $$tanh$$ (包括 $$sigmoid$$ 和 $$softplus$$ (ln(1+e^x))，但不包括 $$ReLU$$) 是连续函数，并且具有连续的逆函数。并且在我们所考虑的
+ 3. tanh （包括 sigmoid 和 softplus，但不包括 ReLU） 是连续函数，并且具有连续的逆函数。并且在我们所考虑的
  领域和范围内他们是双射的。逐点进行函数变换也是同胚的。
 
 因此，如果 $$W$$ 具有非零的行列式，则 $$tanh$$ 层操作就是同胚的。
@@ -105,8 +110,16 @@ $$ A = \{ x | d(x, 0)<1/3\}$$
 
 $$ B = \{ x | 2/3 < d(x, 0)< 1\}$$
 
-![topology-base](http://ok8deh2w3.bkt.clouddn.com/topology_base.png?imageView2/0/w/300)
+![](http://ok8deh2w3.bkt.clouddn.com/topology_base.png)
 
 其中红色代表 A，蓝色代表 B
 
-断言：如果一个神经网络模型每一层神经元个数均小于 3，那么无论该模型深度是多少，都无法对上面的数据集进行正确分类。
+断言：如果一个神经网络模型每一层神经元个数均小于 3，那么无论该模型深度是多少，都无法对上面的数据集进行正确分类；也就是说，能够对上面数据进行正确分类的神经网络模型
+至少存在一个神经元个数大于等于3的层。
+
+
+
+---
+参考：
+
+$$softplus$$: $$ln(1+e^x)$$
