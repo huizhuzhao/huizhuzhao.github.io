@@ -26,7 +26,8 @@ A chinese version of blog [Neural Networks, Manifolds, and Topology](http://cola
 
 想要对神经网络模型或者其他算法模型的行为进行可视化，一种直接的方式便是去观测它对每一个可能的数据点是如何进行分类的。
 
-为此，我们先以最简单的一类神经网络模型为例，该网络仅有一个输入层和一个输出层。该网络仅是简单的用一条直线对两类数据点进行区分。如下图所示
+为此，我们先以最简单的一类神经网络模型为例，该网络仅有一个输入层和一个输出层。该网络仅是简单的用一条直线对两类数据点进行区分
+(代码参考[jupyter notebook](https://github.com/huizhuzhao/jupyter_notebook/blob/master/jupyter_keras/examples/nn_manifold_topology.ipynb))。如下图所示
 
 ![olah_two_curves_2](/images/olah_two_curves_2.png)
 
