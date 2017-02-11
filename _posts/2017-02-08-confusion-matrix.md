@@ -114,24 +114,124 @@ x 轴表示 false positive rate (1-specificity)， y 轴表示 true positive rat
 
 ## 皮尔逊相关系数 [Pearon correlation](https://statistics.laerd.com/statistical-guides/pearson-correlation-coefficient-statistical-guide.php)
 
- 此系数用来计算两个变量的线性相关性，包括方向--正相关或负相关，和强度--介于[0, 1]之间，0表示无相关，1表示完全相关。
- 
- 要求： 两个变量必须是连续变量。
- 
- 特点： 
-     1. 两个变量的观测值可以有不同的单位，比如身高和血糖值。
-     
-     2. 此系数与两个变量拟合直线的斜率无关，比如 r = 1. 表明两个变量之间存在严格的线性关系，但斜率的值可以是任意正数，0.2， 10 
+$$r_{xy} = \frac{\sum_i(x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\sum_i (x_i - \bar{x})^2 \sum_i (y_i - \bar{y})^2}}
+=\frac{n\sum_i x_i y_i - \sum_i x_i \sum_i y_i}{\sqrt{n\sum_i x_i^2 - (\sum_i x_i)^2} \sqrt{n\sum_i y_i^2 - (\sum_i y_i)^2}}$$
 
+通常 pearson 系数的报告形式为： 
+
+r(df) = pearson-correlation, p-value = statistical significance，其中 df = N - 2
+
+{% highlight python %}
+def correlation_pearson(y_pred, y_true):
+    """
+    return:
+        pearson correlation coefficient
+    """
+    cov = np.mean(y_pred * y_true) - np.mean(y_pred) * np.mean(y_true)    
+    y_pred_std = np.std(y_pred)
+    y_true_std = np.std(y_true)
+
+    corr_pearson = cov / (y_pred_std * y_true_std)
+
+    return corr_pearson
+{% endhighlight %}
+ 此系数用来计算两个变量的**线性**相关性，包括方向 (正相关或负相关) 和强度 (介于[0, 1]之间，0表示非线性相关，1表示完全线性相关)。如果已知两个变量之间是非线性关系，比如指数关系，
+ 那么计算出来的 Pearson 系数值没有意义。在两个变量满足线性关系的前提下，可以通过画出他们的散点图来确定线性关系是否成立，pearson 系数反应了该线性关系的程度，但 Pearson 
+ 方法本身并不能判断此线性关系是否成立。定量地，Pearson 方法会穿过所有数据点画出一条最佳的拟合**直线**，并给出此直线在多大程度上符合该数据集。
+
+ 要求： 
+   
+   1. 两个变量必须是连续变量 [types-of-variables](types-of-variables)。
+   2. 两个变量必须近似满足正态分布。(Pearson 方法为参数化统计方法 [wiki](https://en.wikipedia.org/wiki/Parametric_statistics))
+   3. 两个变量必须满足线性关系。
+   4. 数据中异常值应尽可能的少。
+   5. 两个变量应具有同方差 homoscedasticity
+
+  ![](/images/metrics/pearson_linear_1.png)
+
+  通过两个变量之间的散点图的形状决定**线性关系**的前提是否满足，第一幅图满足线性关系，第二三幅图不满足。
+
+  ![](/images/metrics/pearson_outlier_1.png)
+
+  Pearson 系数对异常值会很敏感，少量的异常值就会导致系数值的巨大变化。确定异常值的简单方法便是通过画出两个变量的散点图来确定，如图中所示。
+
+  ![](/images/metrics/pearson_homoscedasticity_1.png)
+
+  Homoscedasticity 是指落在直线 x=x_0 （垂直线）上的数据点的方差，随着 x_0 的移动保持一致；反之落在 y=y_0 （水平线）上的数据点的方差，随着 y_0 的移动保持一致。
+ 
+
+
+
+ ![](/images/metrics/pearson_2.png)
+
+  具体系数值达到多少才算相关性比较强，并没有
+  统一的规定，下图可以用来作为参考，但实际应用过程中还是需要根据所用数据进行调整
+ 
+
+  ![](/images/metrics/pearson_3.png)
+
+  [wiki](https://en.wikipedia.org/wiki/Correlation_and_dependence) 图中展示了若干数据集 (x, y), 以及各自的
+  pearson 相关系数的值。图中第一行通过pearson系数反应了数据集中变量x 和 y 之间的相关性（方向和强度）；图中中间行表明 pearson 系数
+  与数据拟合直线的斜率无关，中间的数据集没有计算出 pearson 系数是因为变量 y 的方差为0；图中第三行表明 pearson 系数并不适用于
+  非线性数据集。 
 
 
 
 ## 斯皮尔曼等级相关系数 [Spearman's rank-order correlation](https://statistics.laerd.com/statistical-guides/spearmans-rank-order-correlation-statistical-guide.php)
 
-要求：两个变量必须是 [ordinal](https://statistics.laerd.com/statistical-guides/types-of-variable.php)
- 类型的数据 
+Spearman 等级相关系数 (以下简称 spearman 系数) 用来计算两个**顺序**类型变量之间的**单调**相关性，包括方向 (正相关或负相关) 和强度 (介于[0, 1]之间，0表示非线性相关，1表示完全线性相关)。
+这种单调性是指随着一个变量观测值的增加，另外一个变量的观测值也相应的增加，或者相应的减小，而增加/减小的幅度对计算结果无影响。
 
-1. 此系数用来衡量两个变量单调相关性的方向（正相关或负相关）和强度(0-1)； 而 pearson 相关系数用来衡量两个变量线性相关性的方向和强度。
+如果两个变量 X, Y 是连续型变量，需要先计算出各自观测值 x_i 和 y_i 的排序下标 rankx_i 和 ranky_i，并使用该下标计算 spearman 系数。计算排序下标的 python 代码如下：
 
+{% highlight python %}
+def tied_rank(x):
+    """
+    Computes the tied rank of elements in x.
+
+    This function computes the tied rank of elements in x.
+
+    Parameters
+    ----------
+    x : list of numbers, numpy array
+
+    Returns
+    -------
+    score : list of numbers
+            The tied rank f each element in x
+
+    """
+    sorted_x = sorted(zip(x,range(len(x))))
+    r = [0 for k in x]
+    cur_val = sorted_x[0][0]
+    last_rank = 0
+    for i in range(len(sorted_x)):
+        if cur_val != sorted_x[i][0]:
+            cur_val = sorted_x[i][0]
+            for j in range(last_rank, i): 
+                r[sorted_x[j][1]] = float(last_rank+1+i)/2.0
+            last_rank = i
+        if i==len(sorted_x)-1:
+            for j in range(last_rank, i+1): 
+                r[sorted_x[j][1]] = float(last_rank+i+2)/2.0
+    return r
+{% endhighlight %}
+
+要求：
+   
+   1. 两个变量必须是顺序类型，或者连续类型 [[types-of-variables]](types-of-variables)。
+
+   2. 两个变量之间必须满足单调性 (此处*单调性*的限制性条件要比*线性*弱，因此当数据集由于不满足线性条件而不能使用 pearson 系数时，可以考虑使用 spearman 系数)。
+
+   ![](/images/metrics/spearman_monotonic_1.png)
+
+特点：
+  
+   1. 对于不满足正态分布的变量，spearman 系数同样适用。
+   2. spearman 系数对异常值并不敏感，即异常值并不会使计算出的值的不可靠。
 
  ---
+
+ 参考：
+
+ [types-of-variables]: https://statistics.laerd.com/statistical-guides/types-of-variable.php
