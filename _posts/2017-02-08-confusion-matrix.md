@@ -1,10 +1,13 @@
 ---
 layout: post
-title: Confusion matrix
+title: Metrics
 date: 2017-02-08
 categories: jekyll update
 comments: true
 ---
+
+一个非常好的关于机器学习算法中常用评价指标的github项目 [Metrics](https://github.com/benhamner/Metrics)，该项目作者
+Ben Hamner 是 Kaggle 组织的联合创始人及 CTO。
 
 ## Confusion matrix
 
@@ -86,7 +89,12 @@ comments: true
  
 ## ROC (receiver operating characteristic) curve
 
-ROC 曲线同 confusion matrix 一样用来衡量分类模型的优劣。如下图所示，x 轴表示 false positive rate (1-specificity)， y 轴表示 true positive rate (sensitivity)，因为 ROC 包含了 sensitivity 和 specificity， 因此 ROC 曲线上的每一点包含了该点对应的 confusion matrix 中的所有信息。
+同 confusion matrix 一样, ROC 曲线用来衡量分类模型的优劣。如下图所示，
+x 轴表示 false positive rate (1-specificity)， y 轴表示 true positive rate (sensitivity)，因为 ROC 包含了 sensitivity 和 specificity， 因此 ROC 曲线上的每一点包含了该点对应的 confusion matrix 中的所有信息。
+
+这里解释一下 x 轴和 y 轴的来历，ROC 是在二战时期提出，用来探测敌军雷达信号[wiki](https://en.wikipedia.org/wiki/Receiver_operating_characteristic)，
+其中 y 轴代表探测到的信号为 "1"（危险） 且该信号真实为 "1"的概率，而 x 轴表示探测到信号为 "1", 但真实情况为 “0”,即假警报 (false alarm)的概率。使用这两个值
+来衡量探测器的性能。
 
 
 <!---
@@ -94,6 +102,8 @@ ROC 曲线同 confusion matrix 一样用来衡量分类模型的优劣。如下�
 -->
 ![](http://obmpvqs90.bkt.clouddn.com/ROC_space-2.png?imageView2/1/w/500)
 
+模型表现越好，其对应的 (FP, TP) 点越靠近图中的左上角 (0, 1); 反之则越靠近图中的右下角 (1, 0)。图中的对角线 (红色虚线) 表示
+模型在两个类别上的预测准确率均为 50%
 
 图中 A, B, C 和 C' 四个点对应的 confusion matrix 如下图所示
 
@@ -102,6 +112,26 @@ ROC 曲线同 confusion matrix 一样用来衡量分类模型的优劣。如下�
 通常情况下，模型的 true positive rate (benefit) 值越大，false positive rate (cost) 的值也会越大，我们在选择模型时需要模型在这两个指标上达到最优（最理想的情况
 是图中左上角的点(0, 1)）。
 
+## 皮尔逊相关系数 [Pearon correlation](https://statistics.laerd.com/statistical-guides/pearson-correlation-coefficient-statistical-guide.php)
+
+ 此系数用来计算两个变量的线性相关性，包括方向--正相关或负相关，和强度--介于[0, 1]之间，0表示无相关，1表示完全相关。
+ 
+ 要求： 两个变量必须是连续变量。
+ 
+ 特点： 
+     1. 两个变量的观测值可以有不同的单位，比如身高和血糖值。
+     
+     2. 此系数与两个变量拟合直线的斜率无关，比如 r = 1. 表明两个变量之间存在严格的线性关系，但斜率的值可以是任意正数，0.2， 10 
+
+
+
+
+## 斯皮尔曼等级相关系数 [Spearman's rank-order correlation](https://statistics.laerd.com/statistical-guides/spearmans-rank-order-correlation-statistical-guide.php)
+
+要求：两个变量必须是 [ordinal](https://statistics.laerd.com/statistical-guides/types-of-variable.php)
+ 类型的数据 
+
+1. 此系数用来衡量两个变量单调相关性的方向（正相关或负相关）和强度(0-1)； 而 pearson 相关系数用来衡量两个变量线性相关性的方向和强度。
 
 
  ---
