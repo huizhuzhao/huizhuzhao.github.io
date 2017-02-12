@@ -103,3 +103,4 @@ Dir(\vec \mu|\vec{\alpha}) =\frac{\Gamma(\alpha_0)}{\Gamma(\alpha_1)...\Gamma(\a
 $$
 
 [PRML]: http://www.springer.com/us/book/9780387310732
+

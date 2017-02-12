@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Metrics
+title: 评价指标--Metrics
 date: 2017-02-08
 categories: jekyll update
 comments: true
@@ -112,6 +112,9 @@ x 轴表示 false positive rate (1-specificity)， y 轴表示 true positive rat
 通常情况下，模型的 true positive rate (benefit) 值越大，false positive rate (cost) 的值也会越大，我们在选择模型时需要模型在这两个指标上达到最优（最理想的情况
 是图中左上角的点(0, 1)）。
 
+名字的由来：ROC 分析来源于信号探测理论，该理论发展于二战时期，主要用来分析雷达图像。雷达接收机操作员 (radar receiver operator) 需要对雷达图像上的闪光点进行判断，判断其是否为敌军目标。
+操作员便是基于信号探测理论对雷达图像进行分类，因此称该方法为 Receiver Operating Characteristic。直到 1970's 年，ROC 方法才广泛的用于分析医疗测试结果。
+
 ## 皮尔逊相关系数 [Pearon correlation](https://statistics.laerd.com/statistical-guides/pearson-correlation-coefficient-statistical-guide.php)
 
 $$r_{xy} = \frac{\sum_i(x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\sum_i (x_i - \bar{x})^2 \sum_i (y_i - \bar{y})^2}}
@@ -179,43 +182,67 @@ def correlation_pearson(y_pred, y_true):
 
 ## 斯皮尔曼等级相关系数 [Spearman's rank-order correlation](https://statistics.laerd.com/statistical-guides/spearmans-rank-order-correlation-statistical-guide.php)
 
-Spearman 等级相关系数 (以下简称 spearman 系数) 用来计算两个**顺序**类型变量之间的**单调**相关性，包括方向 (正相关或负相关) 和强度 (介于[0, 1]之间，0表示非线性相关，1表示完全线性相关)。
+Spearman 等级相关系数 (以下简称 spearman 系数) 用来计算两个**顺序**类型变量之间的**单调**相关性，包括方向 (正相关或负相关) 和强度 (介于[0, 1]之间，0表示无单调相关，1表示完全单调相关)。
 这种单调性是指随着一个变量观测值的增加，另外一个变量的观测值也相应的增加，或者相应的减小，而增加/减小的幅度对计算结果无影响。
 
 如果两个变量 X, Y 是连续型变量，需要先计算出各自观测值 x_i 和 y_i 的排序下标 rankx_i 和 ranky_i，并使用该下标计算 spearman 系数。计算排序下标的 python 代码如下：
 
 {% highlight python %}
-def tied_rank(x):
+def correlation_pearson(y_pred, y_true):
     """
-    Computes the tied rank of elements in x.
-
-    This function computes the tied rank of elements in x.
-
-    Parameters
-    ----------
-    x : list of numbers, numpy array
-
-    Returns
-    -------
-    score : list of numbers
-            The tied rank f each element in x
-
+    refer https://statistics.laerd.com/statistical-guides/spearmans-rank-order-correlation-statistical-guide.php 
+    for details about ranking tied data
+	
+    inputs
+	x: list of num or 1D np.ndarray
+    return:
+	tied_rank of x: list of num
     """
-    sorted_x = sorted(zip(x,range(len(x))))
-    r = [0 for k in x]
-    cur_val = sorted_x[0][0]
-    last_rank = 0
-    for i in range(len(sorted_x)):
-        if cur_val != sorted_x[i][0]:
-            cur_val = sorted_x[i][0]
-            for j in range(last_rank, i): 
-                r[sorted_x[j][1]] = float(last_rank+1+i)/2.0
-            last_rank = i
-        if i==len(sorted_x)-1:
-            for j in range(last_rank, i+1): 
-                r[sorted_x[j][1]] = float(last_rank+i+2)/2.0
-    return r
+
+    total_num = len(x)
+    x_sorted = [[e, r] for e, r in zip(sorted(x), range(total_num))]
+
+    start_e = x_sorted[0][0]
+    start_rank = 0
+    for e, r in x_sorted:
+        if e == start_e:
+            pass
+
+        else:
+            mean_rank = np.mean(np.asarray(range(start_rank, r)))
+            for idx in range(start_rank, r):
+                x_sorted[idx][1] = mean_rank
+            start_rank = r
+            start_e = e
+		
+    mean_rank = np.mean(np.asarray(range(start_rank, total_num)))
+	
+    for idx in range(start_rank, total_num):
+        x_sorted[idx][1] = mean_rank
+
+    x_sorted_dict = dict(x_r for x_r in x_sorted)
+
+    return [x_sorted_dict[e]+1 for e in x]
 {% endhighlight %}
+
+下图是某班级学生的 English 和 Maths 成绩，我们将 English 和 Maths 看做变量，则下图即为该变量的观测数据。
+
+![](/images/metrics/english_math_scores.png)
+
+为了计算变量的 spearman 系数，我们使用上面的代码计算出变量的排序下标，如下图所示：
+
+![](/images/metrics/english_math_ranks.png)
+
+则计算 spearman 系数的公式如下:
+
+$$\rho = \frac{\sum_i (x_i - \bar x)(y_i-\bar y)}{\sqrt{\sum_i(x_i - \bar x)^2 \cdot \sum_i(y_i - \bar y)^2}}$$
+
+这里 (x, y) 表示 (rank_English, rank_Maths)。如果变量 x, y 的各自的观测数据中均不存在相同的值，也就是不存在 tied rank 时，可以
+使用下面更为简介的公式计算：
+
+$$\rho = 1 - \frac{6\sum_i d_i^2}{n(n^2 - 1)}$$
+
+其中 d_i = x_i - y_i。
 
 要求：
    
