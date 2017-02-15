@@ -21,3 +21,11 @@ Aspirin (CC(=O)OC1=CC=CC=C1C(=O)O)  also known as acetylsalicylic acid (ASA), is
 Source [wiki](https://en.wikipedia.org/wiki/Aspirin)
 
 ![](/images/molecule/aspirin_2.png)
+
+
+CCc1cccc2ccccc12
+![](/images/molecule/CCc1cccc2ccccc12.png)
+
+
+CCOP(=O)(OCC)OCC
+![](/images/molecule/CCOP(=O)(OCC)OCC.png)
