@@ -1,6 +1,6 @@
 ---
 layout: post
-title: boxes and balls problem
+title: 将球放到盒子里
 date: 2016-12-30
 ---
 
