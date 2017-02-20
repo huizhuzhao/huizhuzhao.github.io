@@ -89,12 +89,14 @@ Ben Hamner 是 Kaggle 组织的联合创始人及 CTO。
  
 ## ROC (receiver operating characteristic) curve
 
+[An introduction to ROC analysis](http://www.sciencedirect.com/science/article/pii/S016786550500303X)
+
 同 confusion matrix 一样, ROC 曲线用来衡量分类模型的优劣。如下图所示，
 x 轴表示 false positive rate (1-specificity)， y 轴表示 true positive rate (sensitivity)，因为 ROC 包含了 sensitivity 和 specificity， 因此 ROC 曲线上的每一点包含了该点对应的 confusion matrix 中的所有信息。
 
 这里解释一下 x 轴和 y 轴的来历，ROC 是在二战时期提出，用来探测敌军雷达信号[wiki](https://en.wikipedia.org/wiki/Receiver_operating_characteristic)，
-其中 y 轴代表探测到的信号为 "1"（危险） 且该信号真实为 "1"的概率，而 x 轴表示探测到信号为 "1", 但真实情况为 “0”,即假警报 (false alarm)的概率。使用这两个值
-来衡量探测器的性能。
+其中 y 轴表示对于值为 "1"（危险） 的信号，探测器将其正确判断为“1”的概率； x 轴表示对于值为“0” （安全）的信号，探测器将其错判为“1”的概率，即假警报(false alarm)。
+使用这两个值来衡量探测器的性能。
 
 
 <!---
@@ -114,6 +116,13 @@ x 轴表示 false positive rate (1-specificity)， y 轴表示 true positive rat
 
 名字的由来：ROC 分析来源于信号探测理论，该理论发展于二战时期，主要用来分析雷达图像。雷达接收机操作员 (radar receiver operator) 需要对雷达图像上的闪光点进行判断，判断其是否为敌军目标。
 操作员便是基于信号探测理论对雷达图像进行分类，因此称该方法为 Receiver Operating Characteristic。直到 1970's 年，ROC 方法才广泛的用于分析医疗测试结果。
+
+## AUC
+
+动态的画出二分类问题的 [ROC 曲线](https://kennis-research.shinyapps.io/ROC-Curves/)
+
+[Kaggle](https://www.kaggle.com/wiki/AreaUnderCurve)
+[url2](http://stats.stackexchange.com/questions/132777/what-does-auc-stand-for-and-what-is-it)
 
 ## 皮尔逊相关系数 [Pearon correlation](https://statistics.laerd.com/statistical-guides/pearson-correlation-coefficient-statistical-guide.php)
 

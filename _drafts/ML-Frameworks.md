@@ -3,6 +3,22 @@ layout: page
 title: ML-frameworks
 ---
 
+### Lasagne
+
+下面两个名令将 `lasagne` 安装到了不同的路径下
+* `sudo pip install Lasagne==0.1`
+```
+ Lasagne==0.1 in /usr/local/lib/python2.7/dist-packages
+```
+
+* `pip install Lasagne==0.1`
+
+```
+ Lasagne==0.1 in /home/huizhu/anaconda2/lib/python2.7/site-packages
+```
+
+
+
 ### Theano
 
 * [Basic Tensor Functionality](http://deeplearning.net/software/theano/library/tensor/basic.html)

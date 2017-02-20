@@ -98,6 +98,12 @@ title: Fantastic ML blogs
   [Turing Finance](http://www.turingfinance.com/what-drives-real-gdp-growth-part-one/)
 
 * [Harold Pimentel](http://pimentel.github.io/)
+
+  ![](/images/fantastic_blogs/harold-pimentel.png)
+
+* [Bharath Ramsundar](https://rbharath.github.io/)
+  
+  ![](/images/fantastic_blogs/bharath-ramsundar.png)
   
 
 [gitxiv]: http://www.gitxiv.com/
