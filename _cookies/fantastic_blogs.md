@@ -104,6 +104,9 @@ title: Fantastic ML blogs
 * [Bharath Ramsundar](https://rbharath.github.io/)
   
   ![](/images/fantastic_blogs/bharath-ramsundar.png)
+
+* [Patricia Bento](https://www.ebi.ac.uk/about/people/patricia-bento) (A Research Institute)
+![](/images/cookies/patricia.png)
   
 
 [gitxiv]: http://www.gitxiv.com/

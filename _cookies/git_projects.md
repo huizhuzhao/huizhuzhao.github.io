@@ -25,6 +25,8 @@ title: Github projects
 
 * [theano-based RNN examples and their Bidirectional version](https://github.com/uyaseen/theano-recurrence])
 
+* [RU-ToxRisk_Tox21](https://github.com/flatkinson/EU-ToxRisk_Tox21)
+
 ----
 ### Tech webs
 
