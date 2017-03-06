@@ -6,6 +6,12 @@ categories: jekyll update
 comments: true
 ---
 
+$$y = f(b+\sum_i w_i x_i)$$
+
+$$y = \frac{1}{1+e^{-z}}$$
+
+$$y = max(0, z)$$
+
 一个非常好的关于机器学习算法中常用评价指标的github项目 [Metrics](https://github.com/benhamner/Metrics)，该项目作者
 Ben Hamner 是 Kaggle 组织的联合创始人及 CTO。
 

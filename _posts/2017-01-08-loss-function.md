@@ -5,6 +5,26 @@ date: 2017-01-08
 categories: jekyll update
 comments: true
 ---
+
+ 
+$$a = f(b+\sum_i w_i x_i)$$
+
+$$a = \frac{1}{1+e^{-z}}$$
+
+$$a = max(0, z)$$
+
+ $$ a = \sigma(b + \sum_i w_i x_i)$$
+
+ $$C = \frac{1}{N}\sum_{n=1}^N ( y_n -  a_n)^2=f(b, w1, w2)$$
+
+ $$C = \frac{1}{N} \sum_{n=1}^N y_n ln\:a_n + (1-y_n)ln\:(1-a_n)$$
+
+ $$\delta^l = \frac{\partial C}{\partial z^l}\qquad z^l = b + \sum_i w_i x_i$$
+
+ $$C = \frac{1}{2} (y - a)^2$$
+
+ $$\frac{\partial C}{\partial w} = (a - y) \sigma'(z)$$
+
 ## 定义
 
 对于分类问题，假设我们有数据集 $$D=\{(\vec x_1, \vec y_1), (\vec x_2, \vec y_2), ..., (\vec x_N, \vec y_N)\}$$，以及模型 $$F$$，其中 $$\vec x_i,\: \vec y_i$$ 均为向量，$$\vec y_i$$ 满足 [one-hot][one-hot-wiki] 形式； 为了量化模型在数据集$$D$$上的表现能力，也就是模型输出结果与真实结果的吻合度，我们通过定义损失函数 (loss function) 来计算该值。 假设模型的输出为 $$\vec f = F(\vec x)$$，我们有如下两种损失函数：
