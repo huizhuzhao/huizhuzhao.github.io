@@ -6,11 +6,6 @@ categories: jekyll update
 comments: true
 ---
 
-$$y = f(b+\sum_i w_i x_i)$$
-
-$$y = \frac{1}{1+e^{-z}}$$
-
-$$y = max(0, z)$$
 
 一个非常好的关于机器学习算法中常用评价指标的github项目 [Metrics](https://github.com/benhamner/Metrics)，该项目作者
 Ben Hamner 是 Kaggle 组织的联合创始人及 CTO。
@@ -100,6 +95,8 @@ Ben Hamner 是 Kaggle 组织的联合创始人及 CTO。
 同 confusion matrix 一样, ROC 曲线用来衡量分类模型的优劣。如下图所示，
 x 轴表示 false positive rate (1-specificity)， y 轴表示 true positive rate (sensitivity)，因为 ROC 包含了 sensitivity 和 specificity， 因此 ROC 曲线上的每一点包含了该点对应的 confusion matrix 中的所有信息。
 
+![](http://obmpvqs90.bkt.clouddn.com/ROC_space-2.png?imageView2/1/w/500)
+
 这里解释一下 x 轴和 y 轴的来历，ROC 是在二战时期提出，用来探测敌军雷达信号[wiki](https://en.wikipedia.org/wiki/Receiver_operating_characteristic)，
 其中 y 轴表示对于值为 "1"（危险） 的信号，探测器将其正确判断为“1”的概率； x 轴表示对于值为“0” （安全）的信号，探测器将其错判为“1”的概率，即假警报(false alarm)。
 使用这两个值来衡量探测器的性能。
@@ -108,17 +105,64 @@ x 轴表示 false positive rate (1-specificity)， y 轴表示 true positive rat
 <!---
 ![](/images/confusion_matrix/ROC_space-2.png)
 -->
-![](http://obmpvqs90.bkt.clouddn.com/ROC_space-2.png?imageView2/1/w/500)
 
 模型表现越好，其对应的 (FP, TP) 点越靠近图中的左上角 (0, 1); 反之则越靠近图中的右下角 (1, 0)。图中的对角线 (红色虚线) 表示
 模型在两个类别上的预测准确率均为 50%
 
+我们以下面的代码来计算 ROC
+
+{% highlight python %}
+
+def binary_roc_curve(y_true, y_pred, pos_label=1, sample_weight=None):
+    '''
+    for details, refer to 
+    https://github.com/scikit-learn/scikit-learn/blob/14031f6/sklearn/metrics/ranking.py#L187
+
+    inputs
+    -------
+    y_true: 1D array, shape=[n]
+        True targets of binary classification
+    
+    y_pred: 1D array, shape=[n]
+        Estimated probabilities of binary classification
+    
+    pos_label: int, the label of positive class
+
+    sample_weight: array-like of shape=[n]
+
+    '''
+    classes = np.unique(y_true)
+    if sample_weight is None:
+        sample_weight = np.ones_like(y_true, dtype=np.float)
+
+    # y_true = np.array([0, 0, 1, 1, 0]), 
+    # y_pred = np.array([0.1, 0.4, 0.35, 0.8, 0.1])
+    y_true = (y_true == pos_label)
+    
+    desc_idx = np.argsort(y_pred)[::-1]
+    y_true = y_true[desc_idx] # [True, False, True, False, False]
+    y_pred = y_pred[desc_idx] # [0.8, 0.4, 0.35, 0.1, 0.1]
+    sample_weight = sample_weight[desc_idx]
+
+    distinct_value_idx = np.where(np.diff(y_pred))[0] #[0, 1, 2]
+    threshold_idx = np.r_[distinct_value_idx, y_true.size - 1] # [0, 1, 2, 4]
+
+    tps = np.cumsum(y_true * sample_weight)[threshold_idx] # [1, 1, 2, 2]
+    fps = np.cumsum(sample_weight)[threshold_idx] - tps # [0, 1, 1, 3]
+    tpr = tps / tps[-1] # [0.5, 0.5, 1., 1.]
+    fpr = fps / fps[-1] # [0., 0.333, 0.333, 1.]
+    threshold = y_pred[threshold_idx] # [0.8, 0.4, 0.3, 0.1]
+
+    return fpr, tpr, threshold
+
+
+{% endhighlight %}
+<!---
 图中 A, B, C 和 C' 四个点对应的 confusion matrix 如下图所示
-
 ![](/images/confusion_matrix/ROC_space_1.png)
-
 通常情况下，模型的 true positive rate (benefit) 值越大，false positive rate (cost) 的值也会越大，我们在选择模型时需要模型在这两个指标上达到最优（最理想的情况
 是图中左上角的点(0, 1)）。
+-->
 
 名字的由来：ROC 分析来源于信号探测理论，该理论发展于二战时期，主要用来分析雷达图像。雷达接收机操作员 (radar receiver operator) 需要对雷达图像上的闪光点进行判断，判断其是否为敌军目标。
 操作员便是基于信号探测理论对雷达图像进行分类，因此称该方法为 Receiver Operating Characteristic。直到 1970's 年，ROC 方法才广泛的用于分析医疗测试结果。
@@ -129,6 +173,32 @@ x 轴表示 false positive rate (1-specificity)， y 轴表示 true positive rat
 
 [Kaggle](https://www.kaggle.com/wiki/AreaUnderCurve)
 [url2](http://stats.stackexchange.com/questions/132777/what-does-auc-stand-for-and-what-is-it)
+
+{% highlight python %}
+def auc(x, y, reorder=False)
+    '''
+    for details, refer to 
+    https://github.com/scikit-learn/scikit-learn/blob/14031f6/sklearn/metrics/ranking.py#L187
+
+    inputs
+    ------
+    x: 1D array, shape=[n], fpr
+    y: 1D array, shape=[n], tpr
+    reorder: boolean, optional (default=False)
+
+    return
+    ------
+    auc value: float
+    '''
+    if reorder:
+        order = np.lexsort((y, x))
+        x, y = x[order], y[order]
+    
+    area = np.trapz(y, x)
+    return area
+
+
+{% endhighlight %}
 
 ## 皮尔逊相关系数 [Pearon correlation](https://statistics.laerd.com/statistical-guides/pearson-correlation-coefficient-statistical-guide.php)
 
