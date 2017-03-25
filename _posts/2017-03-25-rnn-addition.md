@@ -1,7 +1,7 @@
 ---
 layout: post
 title: RNN--addition
-date: 2016-12-29
+date: 2017-03-25
 ---
 
 Now we want to build an RNN model for addition, let's firstly to illustrate our problem clearly:
@@ -89,7 +89,7 @@ other 11 symbols changed from **11** to **12**.
 
 In the above figure, the red rectangle indicates input vectors, and the blue one is output vector, and the middle
 green ones are lstm layers which do the major computation in out model. The mechnism of lstm layer is shown below,
-more details can be found in [Understanding LSTM Networks](understand-lstm-networks)
+more details can be found in [Understanding LSTM Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 
 
 ![](http://on1loo82k.bkt.clouddn.com/lstm.svg)
