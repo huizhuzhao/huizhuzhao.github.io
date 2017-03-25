@@ -86,10 +86,11 @@ other 11 symbols changed from **11** to **12**.
 
 ## RNN model
 
-![](http://on1loo82k.bkt.clouddn.com/addition_2.svg)
+![](http://on1loo82k.bkt.clouddn.com/addition_8.svg)
 
-The first part of our RNN model is shown as the above figure in which the red rectangle indicates input vectors, and the blue one is output vector, and the middle
-green ones are lstm layers with the same parameters (weights and biases) which do the major computation in the model. The mechnism of lstm layer is shown below,
+The first part of our RNN model is shown as the above figure in which the red rectangle indicates input vectors,
+ and the blue one is output vector, and the middle green ones represent one lstm layer that has trainable parameters
+ (weights and biases). It is this lstm layer that do the major computation in the model. The mechnism of lstm layer is shown below,
 more details can be found in [Understanding LSTM Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/).
 
 ![](http://on1loo82k.bkt.clouddn.com/lstm.svg)
@@ -108,10 +109,14 @@ output **h_2**. Thirdly,
 Finally, we get the output **h_7** which contains all the infomation in string **12+237#**, and we hope the following
 part the model have the potential to generate **249#** by taking **h_7** as input.
 
-As the output string has length **4**, we get four copies of vector **h_7** as the inputs of the second part of the 
-RNN model as illustrated below. Thus we get four output vectors **o_1, o_2, o_3, o_4**
+As the output string has length 4, we use four copies of vector **h_7** as the inputs of the second part of the 
+RNN model as illustrated below (again, the four green rectangles represent one lstm layer). 
+Thus we get four output vectors **o_1, o_2, o_3, o_4**
 
 ![](http://on1loo82k.bkt.clouddn.com/addition_5.svg)
+
+Now, we can figure out the whole RNN model as the following. And we should train the parameters in the 
+two lstm layers so that the four output vectors **o_1, o_2, o_3, o_4** always give the correct results.
 
 ![](http://on1loo82k.bkt.clouddn.com/addition_7.svg)
 
