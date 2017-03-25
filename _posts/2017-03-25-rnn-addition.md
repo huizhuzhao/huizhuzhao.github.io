@@ -46,22 +46,22 @@ an example, the encoded matrix is:
 ```
 
 ## the outputs
-With **12+237** as an example, we hope the model can generate the result matrix representing string **359**.
+With **12+237** as an example, we hope the model can generate the result matrix representing string **249**.
 ```
-3, [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
-5, [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+2, [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+4, [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
 9, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]
 ```
 
 ## padding
-In the example **(12+237, 359)**, the input and output matrices have shapes **(6, 11)** and **(3, 11)**, respectively.
+In the example **(12+237, 249)**, the input and output matrices have shapes **(6, 11)** and **(3, 11)**, respectively.
 However, in case **(999+999, 1998)**, the shapes will be **(7, 11)** and **(4, 11)**.
 
 In order to train RNN successfully, we need to unify their shapes, in other words, all the input matrices will have the 
 same shape, and the same is true for output matrices.
 
 To do this, we transform the inputs/outputs to strings with length **7**/**4** by padding **#** at the end. 
-Namely, **12+237** will be transformed to **12+237#**, and **359** to **359#**. Thus, the above two matrices will be:
+Namely, **12+237** will be transformed to **12+237#**, and **249** to **249#**. Thus, the above two matrices will be:
 
 **12+237#** with shape=**[7, 12]**
 ```
@@ -73,10 +73,10 @@ Namely, **12+237** will be transformed to **12+237#**, and **359** to **359#**. 
 7, [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]
 #, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
 ```
-**359#** with shape=**[4, 12]**
+**249#** with shape=**[4, 12]**
 ```
-3, [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
-5, [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+2, [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+4, [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
 9, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0]
 #, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
 ```
@@ -85,13 +85,34 @@ Noting that, symbol **#** was encoded as `#, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1
 other 11 symbols changed from **11** to **12**.
 
 ## RNN model
-![](http://on1loo82k.bkt.clouddn.com/addition_3.svg)
 
-In the above figure, the red rectangle indicates input vectors, and the blue one is output vector, and the middle
-green ones are lstm layers which do the major computation in out model. The mechnism of lstm layer is shown below,
-more details can be found in [Understanding LSTM Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+![](http://on1loo82k.bkt.clouddn.com/addition_2.svg)
 
+The first part of our RNN model is shown as the above figure in which the red rectangle indicates input vectors, and the blue one is output vector, and the middle
+green ones are lstm layers with the same parameters (weights and biases) which do the major computation in the model. The mechnism of lstm layer is shown below,
+more details can be found in [Understanding LSTM Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/).
 
 ![](http://on1loo82k.bkt.clouddn.com/lstm.svg)
 
-[understand-lstm-networks]: http://colah.github.io/posts/2015-08-Understanding-LSTMs/
+As we can see in the above, the model read input vectors sequentially. Firstly, 
+
+`1, [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]`
+
+was fed into the lstm layer, and we get it's output **h_1** . Secondly, 
+
+`2, [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]`  as well as **h_1** were fed into the lstm layer again, and we get the 
+output **h_2**. Thirdly, 
+
+`+, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]` and **h_2** were fed into the lstm layer, and the output is **h_3**, and so on.
+
+Finally, we get the output **h_7** which contains all the infomation in string **12+237#**, and we hope the following
+part the model have the potential to generate **249#** by taking **h_7** as input.
+
+As the output string has length **4**, we get four copies of vector **h_7** as the inputs of the second part of the 
+RNN model as illustrated below. Thus we get four output vectors **o_1, o_2, o_3, o_4**
+
+![](http://on1loo82k.bkt.clouddn.com/addition_5.svg)
+
+![](http://on1loo82k.bkt.clouddn.com/addition_7.svg)
+
+
