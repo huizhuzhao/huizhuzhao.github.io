@@ -30,3 +30,75 @@ $$Y=C_{m-1}^{n-1}=\frac{(m-1)!}{(n-1)!(m-n)!} \qquad(Eq.1)$$
   当两侧有空箱时,间隙个数为`m+1`；当单侧有空箱时，间隙个数为`m`
 
 综上，$$ Y=C_{n-m-1}^{m-1-1}+2C_{n-m-1}^{m-1}+C_{n-m-1}^{m} $$，其中等式右侧第一，二，三项分别表示序列两侧没有空箱，单侧有空箱，两侧有空箱的情况。
+
+---
+# Random sampling
+
+Consider the problem: after doing **n** times random sampling from **n** different balls with replacement, what is the probability of $$p_i$$ that
+we get $$i$$ different balls in our result (**n** balls).
+
+If $$i=1$$, we have the number of different solutions 
+$$
+s_1 = C_n^1*\alpha_1 = C_n^1
+$$, 
+
+where $$\alpha_1=1$$
+
+if $$i=2$$, $$s_2 = C_n^2 * \alpha_2 = C_n^2(2^n-C_2^1\alpha_1)$$
+
+if $$i=3$$, $$s_3 = C_n^3 * \alpha_3 = C_n^3(3^n-C_3^2\alpha_2-C_3^1\alpha_1)$$
+
+...
+
+if $$i=i$$, $$s_i = C_n^i * \alpha_i = C_n^i (i^n -\sum_{j=1}^{j=i-1}C_i^j\alpha_j)$$
+
+In the following, we show the scatter plots of $$s_i$$ in cases $$n=10$$ and $$n=15$$, as well as the code of computing $$C_n^i$$ and $$\alpha_i$$.
+
+![](/images/boxes_balls/s_sample.png)
+
+
+
+{%highlight python%}
+def memo(func):
+    """
+    memoization for recursive func
+    """
+    cache = {}
+    ii = []
+    @wraps(func)
+    def wrap(*args):
+        if args not in cache:
+            cache[args] = func(*args)
+        ii.append(1)
+        return cache[args]
+    return wrap
+
+@memo
+def combination(n, i):
+    """
+    compute C(n, i) = n! / (i! * (n-i)!)
+    """
+    n, i = int(n), int(i)
+    x = np.math.factorial(n)
+    y1 = np.math.factorial(i)
+    y2 = np.math.factorial(n-i)
+
+    return x / (y1 * y2)
+
+@memo
+def alpha_i(n, i):
+    """
+    compute \alpha_i
+    """
+    if i == 1:
+        alp = 1
+    elif i>1:
+        s = np.power(i, n)
+        m = 0
+        for k in range(1, i):
+            m += combination(i, k) * alpha_i(n, k)
+        alp = s - m
+    else:
+        raise ValueError('Invalid value {0} received.'.format(i))
+    return alp
+{% endhighlight%}
