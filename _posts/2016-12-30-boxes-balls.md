@@ -54,6 +54,10 @@ if $$i=i$$, $$s_i = C_n^i * \alpha_i = C_n^i (i^n -\sum_{j=1}^{j=i-1}C_i^j\alpha
 
 In the following, we show the scatter plots of $$s_i$$ in cases $$n=10$$ and $$n=15$$, as well as the code of computing $$C_n^i$$ and $$\alpha_i$$.
 
+It worth noting that 
+
+$$ \sum_{i=1}^n s_i = n^n$$
+
 ![](/images/boxes_balls/s_sample.png)
 
 
