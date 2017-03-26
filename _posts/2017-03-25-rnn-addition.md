@@ -61,28 +61,26 @@ In order to train RNN successfully, we need to unify their shapes, in other word
 same shape, and the same is true for output matrices.
 
 To do this, we transform the inputs/outputs to strings with length **7**/**4** by padding **#** at the end. 
-Namely, **12+237** will be transformed to **12+237#**, and **249** to **249#**. Thus, the above two matrices will be:
+Namely, **12+237** will be transformed to **012+237**, and **249** to **0249**. Thus, the above two matrices will be:
 
-**12+237#** with shape=**[7, 12]**
+**012+237** with shape=**[7, 12]**
 ```
-1, [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-2, [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-+, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]
-2, [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-3, [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
-7, [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]
-#, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+0, [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+1, [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2, [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
++, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+2, [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+3, [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+7, [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
 ```
-**249#** with shape=**[4, 12]**
+**0249** with shape=**[4, 12]**
 ```
-2, [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-4, [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
-9, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0]
-#, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+0, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2, [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+4, [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+9, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]
 ```
 
-Noting that, symbol **#** was encoded as `#, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]`, and the vector length of the 
-other 11 symbols changed from **11** to **12**.
 
 ## RNN model
 
@@ -121,3 +119,7 @@ two lstm layers so that the four output vectors **o_1, o_2, o_3, o_4** always gi
 ![](http://on1loo82k.bkt.clouddn.com/addition_7.svg)
 
 
+## code
+As we restrict our model to 3 digits number addition, thus the dataset will be of size 1000 * 1000, i.e each sample has 
+**input=a+b**, and **output=c** 
+where $$a, b\in [000, 999]$$, $$c\in [0000, 1998]$$

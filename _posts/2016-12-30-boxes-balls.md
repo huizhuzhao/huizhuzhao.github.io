@@ -52,7 +52,8 @@ if $$i=3$$, $$s_3 = C_n^3 * \alpha_3 = C_n^3(3^n-C_3^2\alpha_2-C_3^1\alpha_1)$$
 
 if $$i=i$$, $$s_i = C_n^i * \alpha_i = C_n^i (i^n -\sum_{j=1}^{j=i-1}C_i^j\alpha_j)$$
 
-In the following, we show the scatter plots of $$s_i$$ in cases $$n=10$$ and $$n=15$$, as well as the code of computing $$C_n^i$$ and $$\alpha_i$$.
+In the following, we show the scatter plots of $$s_i$$ and $$p_i$$ in cases $$n=10$$ and $$n=15$$, the code of computing $$C_n^i$$ and $$\alpha_i$$ can be found in
+ [github](https://github.com/huizhuzhao/Snow/blob/master/examples/random_sampling.py).
 
 It worth noting that 
 
@@ -62,47 +63,3 @@ $$ \sum_{i=1}^n s_i = n^n$$
 
 
 
-{%highlight python%}
-def memo(func):
-    """
-    memoization for recursive func
-    """
-    cache = {}
-    ii = []
-    @wraps(func)
-    def wrap(*args):
-        if args not in cache:
-            cache[args] = func(*args)
-        ii.append(1)
-        return cache[args]
-    return wrap
-
-@memo
-def combination(n, i):
-    """
-    compute C(n, i) = n! / (i! * (n-i)!)
-    """
-    n, i = int(n), int(i)
-    x = np.math.factorial(n)
-    y1 = np.math.factorial(i)
-    y2 = np.math.factorial(n-i)
-
-    return x / (y1 * y2)
-
-@memo
-def alpha_i(n, i):
-    """
-    compute \alpha_i
-    """
-    if i == 1:
-        alp = 1
-    elif i>1:
-        s = np.power(i, n)
-        m = 0
-        for k in range(1, i):
-            m += combination(i, k) * alpha_i(n, k)
-        alp = s - m
-    else:
-        raise ValueError('Invalid value {0} received.'.format(i))
-    return alp
-{% endhighlight%}
