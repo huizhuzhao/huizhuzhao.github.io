@@ -30,3 +30,36 @@ $$Y=C_{m-1}^{n-1}=\frac{(m-1)!}{(n-1)!(m-n)!} \qquad(Eq.1)$$
   当两侧有空箱时,间隙个数为`m+1`；当单侧有空箱时，间隙个数为`m`
 
 综上，$$ Y=C_{n-m-1}^{m-1-1}+2C_{n-m-1}^{m-1}+C_{n-m-1}^{m} $$，其中等式右侧第一，二，三项分别表示序列两侧没有空箱，单侧有空箱，两侧有空箱的情况。
+
+---
+# Random sampling
+
+Consider the problem: after doing **n** times random sampling from **n** different balls with replacement, what is the probability of $$p_i$$ that
+we get $$i$$ different balls in our result (**n** balls).
+
+If $$i=1$$, we have the number of different solutions 
+$$
+s_1 = C_n^1*\alpha_1 = C_n^1
+$$, 
+
+where $$\alpha_1=1$$
+
+if $$i=2$$, $$s_2 = C_n^2 * \alpha_2 = C_n^2(2^n-C_2^1\alpha_1)$$
+
+if $$i=3$$, $$s_3 = C_n^3 * \alpha_3 = C_n^3(3^n-C_3^2\alpha_2-C_3^1\alpha_1)$$
+
+...
+
+if $$i=i$$, $$s_i = C_n^i * \alpha_i = C_n^i (i^n -\sum_{j=1}^{j=i-1}C_i^j\alpha_j)$$
+
+In the following, we show the scatter plots of $$s_i$$ and $$p_i$$ in cases $$n=10$$ and $$n=15$$, the code of computing $$C_n^i$$ and $$\alpha_i$$ can be found in
+ [github](https://github.com/huizhuzhao/Snow/blob/master/examples/random_sampling.py).
+
+It worth noting that 
+
+$$ \sum_{i=1}^n s_i = n^n$$
+
+![](/images/boxes_balls/s_sample.png)
+
+
+
