@@ -61,26 +61,30 @@ In order to train RNN successfully, we need to unify their shapes, in other word
 same shape, and the same is true for output matrices.
 
 To do this, we transform the inputs/outputs to strings with length **7**/**4** by padding **#** at the end. 
-Namely, **12+237** will be transformed to **012+237**, and **249** to **0249**. Thus, the above two matrices will be:
+Namely, **12+237** will be transformed to **12+237#**, and **249** to **249#**. Thus, the above two matrices will be:
 
-**012+237** with shape=**[7, 12]**
+**12+237#** with shape=**[7, 12]**
 ```
-0, [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-1, [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-2, [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
-+, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
-2, [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
-3, [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
-7, [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
+1, [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2, [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
++, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]
+2, [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+3, [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+7, [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]
+#, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
 ```
-**0249** with shape=**[4, 12]**
+**249#** with shape=**[4, 12]**
 ```
-0, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-2, [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
-4, [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
-9, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]
+2, [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+4, [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+9, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0]
+#, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
 ```
+noting that the feature dimension changed from 11 to 12 above, with **#** as 
 
+`#, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]`.
+
+and during training the model, **#** will be masked out.
 
 ## RNN model
 
@@ -122,4 +126,6 @@ two lstm layers so that the four output vectors **o_1, o_2, o_3, o_4** always gi
 ## code
 As we restrict our model to 3 digits number addition, thus the dataset will be of size 1000 * 1000, i.e each sample has 
 **input=a+b**, and **output=c** 
-where $$a, b\in [000, 999]$$, $$c\in [0000, 1998]$$
+where $$a, b\in [0, 999]$$, $$c\in [0, 1998]$$
+
+![](/images/rnn_addition/embedding_2.svg)
