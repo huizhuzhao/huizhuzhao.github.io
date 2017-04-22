@@ -1,7 +1,8 @@
 ---
 layout: post
-title: 将球放到盒子里
+title: others
 date: 2016-12-30
+comments: true
 ---
 
 * 把 `m`个球放到`n`个箱子中，球不可分，箱子可分。每个箱子至少有一个球，共有
@@ -61,5 +62,67 @@ $$ \sum_{i=1}^n s_i = n^n$$
 
 ![](/images/boxes_balls/s_sample.png)
 
+-----
+## Distances distribution on circle/sphere
+We compute the distribution of the distances of pairs of points on on a circle/sphere with radius $$r = 1$$, the data points are uniformly randomly sampled as the following code showing:
 
+{% highlight python%}
+def circle_points(n_samples):
+    """
+    inputs
+    ------
+    n_samples: int
 
+    return
+    ------
+    u: 2D np.ndarray with shape=[n_samples, 2]
+    """
+    theta = np.random.uniform(low=0.0, high=2 * np.pi, size=(n_samples, 1))
+    u = np.concatenate([np.cos(theta), np.sin(theta)], axis=1)
+    return u
+  
+
+def sphere_points(n_samples):
+    """
+    inputs
+    ------
+    n_samples: int
+
+    return
+    ------
+    u: 2D np.ndarray with shape=[n_samples, 3]
+    """
+    theta = np.random.uniform(low=0.0, high=2 * np.pi, size=(n_samples, 1))
+    z = np.random.uniform(low=-1.0, high=1.0, size=(n_samples, 1))
+    x = np.sqrt(1 - z**2) * np.cos(theta)
+    y = np.sqrt(1 - z**2) * np.sin(theta)
+
+    u = np.concatenate([x, y, z], axis=1)
+    return u
+
+def distance(x, y):
+    """
+    inputs
+    ------
+    x: 2D np.ndarray with shape=[n1, dim]
+    y: 2D np.ndarray with shape=[n2, dim]
+
+    return
+    ------
+    dist: 2D np.ndarray with shape=[n1, n2], 
+        dist[i, j] = distance(x[i], y[j])
+    """
+    assert len(x.shape) == len(y.shape) == 2
+    assert x.shape[1] == y.shape[1]
+    x = x[:, np.newaxis, :]
+    y = y[np.newaxis, :, :]
+    z = np.square(x - y)
+    dist = np.sqrt(np.sum(z, axis=-1))
+    return dist
+
+{% endhighlight %}
+<div class="imgcap">
+<img src="/images/others/distance_distribution.png">
+<div class="thecap">Fig: distance distribution on circle (upper) / sphere (lower), 1000 data points are uniformly randomly sampled both on circle and sphere,
+and the total segments are 499500.
+</div>
