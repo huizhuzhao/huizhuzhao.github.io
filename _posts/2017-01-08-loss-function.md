@@ -105,6 +105,6 @@ KL 散度可以用来衡量两种分布之间的"距离"，当两种分布无限
 当分类的类标签彼此独立，不满足互斥时， $$\vec y_n$$ 不再时 one-hot 类型，即其中的任意分量 $$y_n^i \in [0, 1]$$，比如一张图片中可以包含 cat, dog, elephant 三种动物，则 $$\vec y_n = [1, 1, 1]$$，
 而模型预测结果可能是 $$\vec f_n = [0.2, 0.7, 0.6]$$， 此时使用交叉熵可有如下形式
 
- $$L = －\frac{1}{N}\sum_{n=1}^N \sum_{i} y_n^i ln\: f_n^i + (1 - y_n^i) ln\: (1 - f_n^i)$$
- 
+ $$L = －\frac{1}{N}\sum_{n=1}^N \sum_{i} y_n^i ln\: f_n^i + (1 - y_n^i) ln\: (1 - f_n^i)$$ (ref to func `tensorflow.nn.sigmoid_cross_entropy_with_logits`)
+
 [info-theory]: http://colah.github.io/posts/2015-09-Visual-Information/
