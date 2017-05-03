@@ -11,6 +11,8 @@ title: Fantastic ML blogs
 
   ![andrej-karpathy-blog](/images/cookies/andrej-karpathy-logo.png)
 
+  [http://cs.stanford.edu/people/karpathy/](http://cs.stanford.edu/people/karpathy/)
+
 * loss functions
 
   [http://lossfunctions.tumblr.com/][lossfunctions]

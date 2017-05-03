@@ -9,7 +9,7 @@ comments: true
 
 ## 定义
 
-对于分类问题，假设我们有数据集 $$D=\{(\vec x_1, \vec y_1), (\vec x_2, \vec y_2), ..., (\vec x_N, \vec y_N)\}$$，以及模型 $$F$$，其中 $$\vec x_i,\: \vec y_i$$ 均为向量，$$\vec y_i$$ 满足 [one-hot][one-hot-wiki] 形式； 为了量化模型在数据集$$D$$上的表现能力，也就是模型输出结果与真实结果的吻合度，我们通过定义损失函数 (loss function) 来计算该值。 假设模型的输出为 $$\vec f = F(\vec x)$$，我们有如下两种损失函数：
+对于分类问题，假设我们有数据集 $$D=\{(\vec x_1, \vec y_1), (\vec x_2, \vec y_2), ..., (\vec x_N, \vec y_N)\}$$，以及模型 $$F$$，其中 $$\vec x_n,\: \vec y_n$$ 均为向量，$$\vec y_i$$ 满足 [one-hot][one-hot-wiki] 形式； 为了量化模型在数据集$$D$$上的表现能力，也就是模型输出结果与真实结果的吻合度，我们通过定义损失函数 (loss function) 来计算该值。 假设模型的输出为 $$\vec f = F(\vec x)$$，我们有如下两种损失函数：
 
 * 平方和误差 (sum squared error)
 
@@ -81,7 +81,7 @@ def gen_data(N, a, b):
 
 [one-hot-wiki]: https://en.wikipedia.org/wiki/One-hot
 
-## 交叉熵与信息论 (information theory)
+## 交叉熵与信息论 ([information theory](info-theory))
 信息传递的过程涉及 `编码 (encoding)` 和 `解码 (decoding)` 两个步骤，`编码` 是将单词转换成二进制数字 (比如 `dog`$$\rightarrow$$ `01011`)，解码是将二进制数字反编码为相应的单词 (`01011`$$\rightarrow$$ `dog`)。
 
 根据信息论，最优编码长度 $$L(w) = log_2(\frac{1}{p(w)})$$ (详细介绍参考[博客][info-theory])， 其中 $$w$$ 表示词汇表中的单词， $$p(w)$$ 表示单词 $$w$$ 在通信过程中的使用概率 (通过统计得到)。 那么在概率分布 $$p$$ 下，单词的平均编码长度为：
@@ -94,7 +94,17 @@ $$H(p) = \sum_w p(w) log_2 (\frac{1}{p(w)}) = - \sum_w p(w) log_2 \:p(w)$$
 
 $$H_p(q) = - \sum_w q(w) log_2 \:p(w)$$
 
-远远大于 $$H(p)$$，而 $$H_p(q)$$ 便是交叉熵的形式。这里我们
+远远大于 $$H(p)$$，而 $$H_p(q)$$ 便是交叉熵的形式。这里我们引入 Kullback-Leibler divergence (KL 散度)，其定义为
 
+$$ KL_p(q) = H_p(q) - H(p) $$
 
+KL 散度可以用来衡量两种分布之间的"距离"，当两种分布无限接近时，KL 散度的值趋向于 0。
+
+* Binary-cross-entropy
+
+当分类的类标签彼此独立，不满足互斥时， $$\vec y_n$$ 不再时 one-hot 类型，即其中的任意分量 $$y_n^i \in [0, 1]$$，比如一张图片中可以包含 cat, dog, elephant 三种动物，则 $$\vec y_n = [1, 1, 1]$$，
+而模型预测结果可能是 $$\vec f_n = [0.2, 0.7, 0.6]$$， 此时使用交叉熵可有如下形式
+
+ $$L = －\frac{1}{N}\sum_{n=1}^N \sum_{i} y_n^i ln\: f_n^i + (1 - y_n^i) ln\: (1 - f_n^i)$$
+ 
 [info-theory]: http://colah.github.io/posts/2015-09-Visual-Information/
