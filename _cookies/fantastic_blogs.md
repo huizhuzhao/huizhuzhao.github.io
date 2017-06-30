@@ -13,6 +13,9 @@ title: Fantastic ML blogs
 
   [http://cs.stanford.edu/people/karpathy/](http://cs.stanford.edu/people/karpathy/)
 
+* [Pattern Recogntion and Machine Learning--code]
+  [http://prml.github.io/](http://prml.github.io/)
+
 * loss functions
 
   [http://lossfunctions.tumblr.com/][lossfunctions]
@@ -35,6 +38,7 @@ title: Fantastic ML blogs
 
 * [Hacker's guide to Neural Networks][hacker-nn] (by [Andrej Karpathy][karpathy-blog])
 
+* [Understanding convolution](https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/content/convolution.html)
 
 * [WILDML][wildml]
 

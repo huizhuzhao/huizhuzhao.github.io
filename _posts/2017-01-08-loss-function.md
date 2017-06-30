@@ -107,6 +107,10 @@ KL 散度可以用来衡量两种分布之间的"距离"，当两种分布无限
 
 $$L = －\frac{1}{N}\sum_{n=1}^N \sum_{i} y_n^i ln\: f_n^i + (1 - y_n^i) ln\: (1 - f_n^i)$$ 
 
+$$minimize \: L(\vec W, \vec b)$$ 
+
+
+$$\frac{\partial L}{\partial W_i} \quad \frac{\partial L}{\partial b_i}$$
 
 (ref to func `tensorflow.nn.sigmoid_cross_entropy_with_logits`)
 
