@@ -8,6 +8,7 @@ title: Fantastic ML blogs
   ![understanding-lstm](/images/cookies/understanding-lstm.png)
 
 * [Andrej Karpathy blog][karpathy-blog]
+
   [medium@karpathy](https://medium.com/@karpathy)
 
   ![andrej-karpathy-blog](/images/cookies/andrej-karpathy-logo.png)
