@@ -9,6 +9,8 @@ title: Fantastic ML blogs
 
 * [Andrej Karpathy blog][karpathy-blog]
 
+  [medium@karpathy](https://medium.com/@karpathy)
+
   ![andrej-karpathy-blog](/images/cookies/andrej-karpathy-logo.png)
 
   [http://cs.stanford.edu/people/karpathy/](http://cs.stanford.edu/people/karpathy/)
