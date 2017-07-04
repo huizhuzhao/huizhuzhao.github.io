@@ -11,7 +11,7 @@ melts near room temperature. Billions of kilograms are produced annually, mainly
 
 Source [wiki](https://en.wikipedia.org/wiki/Cyclohexanol)
 
-![c1ccccc1o](/images/molecule/c1ccccc1o.png)
+![c1ccccc1o](/images/molecule/c1ccccc1o.png?imageView2/2/h/300)
 
 
 
