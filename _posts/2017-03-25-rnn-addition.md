@@ -128,4 +128,10 @@ As we restrict our model to 3 digits number addition, thus the dataset will be o
 **input=a+b**, and **output=c** 
 where $$a, b\in [0, 999]$$, $$c\in [0, 1998]$$
 
+
+![](http://ok8deh2w3.bkt.clouddn.com/addition_matrix2.png)
+
+
+<!---
 ![](/images/rnn_addition/embedding_2.svg)
+-->
