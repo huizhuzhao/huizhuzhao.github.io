@@ -129,9 +129,11 @@ As we restrict our model to 3 digits number addition, thus the dataset will be o
 where $$a, b\in [0, 999]$$, $$c\in [0, 1998]$$
 
 
-![](http://ok8deh2w3.bkt.clouddn.com/addition_matrix2.png)
+![](http://ok8deh2w3.bkt.clouddn.com/addition_matrix_4.png)
 
+The training results is shown below:
 
+![](http://ok8deh2w3.bkt.clouddn.com/addition_res.png?imageView2/0/w/2700)
 <!---
 ![](/images/rnn_addition/embedding_2.svg)
 -->
