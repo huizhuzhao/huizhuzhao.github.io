@@ -22,7 +22,7 @@ $$\longrightarrow$$
 
 $$D_{KL}(Q\mid P) = \sum_{Z}Q(Z) log\frac{Q(Z)}{P(Z, X)} + logP(X)$$
 
-显然，通过最小化$$D_{KL}(Q||P) $$ 可以使得 $$P(Z\mid X) \prompt Q(Z)$$成立
+显然，通过最小化 $$D_{KL}(Q\|P)$$ 可以使得 $$P(Z\mid X) \prompt Q(Z)$$成立
 
 * 因式分解
 
