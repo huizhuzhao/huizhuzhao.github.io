@@ -147,4 +147,75 @@ print(x_mean_2, x_std_2)
 
 
 
+## l1 vs l2 distance
+```python
+def circle_points(theta):
+    """
+    inputs
+    ------
+    theta: 1D array, angle
+    
+    return
+    ------
+    coord: 2D array,
+    """
+    x = np.cos(theta)
+    y = np.sin(theta)
+    coord = np.asarray([x, y]).T
+    return coord
 
+
+def l1_distance(x, y):
+    """
+    inputs
+    ------
+    x: 2D np.ndarray with shape=[n1, dim]
+    y: 2D np.ndarray with shape=[n2, dim]
+
+    return
+    ------
+    dist: 2D np.ndarray with shape=[n1, n2], 
+        dist[i, j] = sum_{k}(abs(x[i, k] - y[j, k]))
+    """
+    assert len(x.shape) == len(y.shape) == 2
+    assert x.shape[1] == y.shape[1]
+    x = x[:, np.newaxis, :]
+    y = y[np.newaxis, :, :]
+    z = np.abs(x - y)
+    dist = np.sum(z, axis=-1)
+    return dist
+    
+```
+
+
+```python
+n_samples = 100
+theta = np.linspace(0.0, 2 * np.pi, n_samples)
+l2_coord = circle_points(theta) # shape=(n_samples, 2)
+```
+
+
+```python
+# we get 2-D coords according to l1_dist
+l1_dist = l1_distance(l2_coord, np.array([[0, 0.]]))
+x = l1_dist.ravel() * np.cos(theta)
+y = l1_dist.ravel() * np.sin(theta)
+l1_coord = np.asarray([x, y]).T # shape=(n_samples, 2)
+```
+
+
+```python
+plt.scatter(l2_coord[:, 0], l2_coord[:, 1], label='l2', c='b')
+plt.scatter(l1_coord[:, 0], l1_coord[:, 1], label='l1', c='r')
+plt.legend()
+plt.show()
+```
+
+
+![png](Untitled_files/Untitled_4_0.png)
+
+
+
+```python
+
+```
