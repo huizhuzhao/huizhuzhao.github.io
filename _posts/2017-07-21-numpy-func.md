@@ -212,7 +212,7 @@ plt.show()
 ```
 
 
-![png](../images/numpy_funcs/l1_l2_points.png)
+![png](http://ok8deh2w3.bkt.clouddn.com/l1_l2_points.png)
 
 
 
