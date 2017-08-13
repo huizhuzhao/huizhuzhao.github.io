@@ -30,7 +30,7 @@ title: Fantastic ML blogs
 
   ![cs231n](/images/cookies/cs231n.png)
 
-* [CS229 Lecture notes][http://cs229.stanford.edu/materials.html]
+* [CS229 Lecture notes](http://cs229.stanford.edu/materials.html)
 
 * [Predicting Depth, Surface Normals and Semantic Labels with a Common Multi-Scale Convolutional Architecture][cnn-depth-surface]
 
