@@ -18,6 +18,9 @@ title: Fantastic ML blogs
 * [Pattern Recogntion and Machine Learning--code]
   [http://prml.github.io/](http://prml.github.io/)
 
+* [off the convex path](http://www.offconvex.org/)
+![](http://on1loo82k.bkt.clouddn.com/off_the_convex_path.png)
+
 * loss functions
 
   [http://lossfunctions.tumblr.com/][lossfunctions]
