@@ -21,6 +21,9 @@ title: Fantastic ML blogs
 * [off the convex path](http://www.offconvex.org/)
 ![](http://on1loo82k.bkt.clouddn.com/off_the_convex_path.png)
 
+* [chrisalbon](https://chrisalbon.com/)
+![](http://on1loo82k.bkt.clouddn.com/chris.png)
+
 * loss functions
 
   [http://lossfunctions.tumblr.com/][lossfunctions]
