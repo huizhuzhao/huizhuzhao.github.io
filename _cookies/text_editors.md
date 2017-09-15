@@ -1,7 +1,12 @@
 ---
 layout: page
-title: Text-editors
+title: Tools
 ---
+
+---
+## learning list
+* C++ 
+* tensorflow slim/sonnet
 
 ---
 
