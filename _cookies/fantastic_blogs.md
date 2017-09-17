@@ -24,6 +24,9 @@ title: Fantastic ML blogs
 * [chrisalbon](https://chrisalbon.com/)
 ![](http://on1loo82k.bkt.clouddn.com/chris.png)
 
+* [kaggle](http://blog.kaggle.com/)
+ The official Kaggle blog!
+
 * loss functions
 
   [http://lossfunctions.tumblr.com/][lossfunctions]
