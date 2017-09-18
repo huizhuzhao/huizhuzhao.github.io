@@ -27,6 +27,9 @@ title: Fantastic ML blogs
 * [kaggle](http://blog.kaggle.com/)
  The official Kaggle blog!
 
+* [Cognitive Workbench](https://www.cognitive-workbench.com/)
+>The Cognitive Workbench is a deep natural language processing enabled knowledge management application and development framework. It is designed to support users in performing activities, accomplishing tasks and organizing the information and resources they use every day. 
+
 * loss functions
 
   [http://lossfunctions.tumblr.com/][lossfunctions]
