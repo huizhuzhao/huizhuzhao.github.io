@@ -18,6 +18,18 @@ title: Fantastic ML blogs
 * [Pattern Recogntion and Machine Learning--code]
   [http://prml.github.io/](http://prml.github.io/)
 
+* [off the convex path](http://www.offconvex.org/)
+![](http://on1loo82k.bkt.clouddn.com/off_the_convex_path.png)
+
+* [chrisalbon](https://chrisalbon.com/)
+![](http://on1loo82k.bkt.clouddn.com/chris.png)
+
+* [kaggle](http://blog.kaggle.com/)
+ The official Kaggle blog!
+
+* [Cognitive Workbench](https://www.cognitive-workbench.com/)
+>The Cognitive Workbench is a deep natural language processing enabled knowledge management application and development framework. It is designed to support users in performing activities, accomplishing tasks and organizing the information and resources they use every day. 
+
 * loss functions
 
   [http://lossfunctions.tumblr.com/][lossfunctions]
