@@ -4,15 +4,12 @@ title: About
 permalink: /about/
 ---
 
-[Setting up your GitHub Pages site locally with Jekyll](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/#step-4-build-your-local-jekyll-site)
+I am an algorithm enginner at [Xtalpi](www.xtalpi.com), and currently focused on applying deeplearning to drug design.
+I received my Master degree from Renmin University of China, where I worked with Prof. [Lei Wang](http://www.phys.ruc.edu.cn/contents/26/5.html) in the area of heat conduction in 1D lattice system. My interests are in machine learning, big data, and statistics.
 
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+----
+## Publiccations
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jekyll" %} /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+* Deviation from the Maxwell-Cattaneo law: the role of the asymmetric interactions.  Huizhu Zhao, Lei Wang Phys.Rev.E 92, 042136
+* Heat-current correlation loss induced by finite-size effects in a one-dimensional nonlinear lattice. Lei Wang, Lubo Xu, Huizhu Zhao, Phys. Rev. E 91, 012110
