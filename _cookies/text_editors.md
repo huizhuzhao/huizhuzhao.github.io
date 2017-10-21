@@ -61,6 +61,13 @@ title: Tools
 ---
 
 ## Vim
+* mac vim+tmux copy & paste
+    first, my vim is the system vim, and the following 2 steps will allow you to copy & pasta between vim
+    step1: `brew install reattach-to-user-namespace`
+    step2: paste the following lines to `~/.tmux.conf` (if do not have, create one)
+        ```
+        ```
+    
 * Vim YouCompleteMe
 
   [https://github.com/Valloric/YouCompleteMe][youcompleteme]
