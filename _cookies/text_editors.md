@@ -4,6 +4,13 @@ title: Tools
 ---
 
 ---
+## mac tools
+### keyboard shotcuts
+  * open terminal `command + T`
+  * switching between terminals `control + Tab`
+  * switching between applications `command + Tab`
+  
+---
 ## learning list
 * C++ 
 * tensorflow slim/sonnet
