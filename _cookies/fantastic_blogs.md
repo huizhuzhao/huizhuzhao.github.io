@@ -6,6 +6,10 @@ title: Fantastic ML blogs
 * [colah's blog][colah-blog]
 
   ![understanding-lstm](/images/cookies/understanding-lstm.png)
+  
+* [BAIR](http://bair.berkeley.edu/blog/archive/)
+
+  ![](http://on1loo82k.bkt.clouddn.com/BAIR.png)
 
 * [Andrej Karpathy blog][karpathy-blog]
 
