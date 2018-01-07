@@ -6,6 +6,10 @@ title: Fantastic ML blogs
 * [colah's blog][colah-blog]
 
   ![understanding-lstm](/images/cookies/understanding-lstm.png)
+  
+* [BAIR](http://bair.berkeley.edu/blog/archive/)
+
+  ![](http://on1loo82k.bkt.clouddn.com/BAIR.png)
 
 * [Andrej Karpathy blog][karpathy-blog]
 
@@ -29,6 +33,10 @@ title: Fantastic ML blogs
 
 * [Cognitive Workbench](https://www.cognitive-workbench.com/)
 >The Cognitive Workbench is a deep natural language processing enabled knowledge management application and development framework. It is designed to support users in performing activities, accomplishing tasks and organizing the information and resources they use every day. 
+
+* Chelsea Finn
+
+  http://people.eecs.berkeley.edu/~cbfinn/
 
 * loss functions
 
