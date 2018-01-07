@@ -16,7 +16,7 @@ Source [wiki](https://en.wikipedia.org/wiki/Cyclohexanol)
 ----
 ## Paper list
 
-### 综述
+#### 综述
 
 * Drug discovery effectiveness from the standpoint of therapeutic mechanisms and indications，Hsin-Pei Shih1, Xiaodan Zhang2 and Alex M. Aronov1, 2017
 
@@ -30,30 +30,29 @@ Source [wiki](https://en.wikipedia.org/wiki/Cyclohexanol)
 * **Learning Graph Representations with Embedding Propagation**, Alberto García-Durán, Mathias Niepert, (NIPS 2017)
 
 
-* 分子相似性 Molecular Similarity
+#### 分子相似性 Molecular Similarity
 
-Computer-Assisted Retrosynthesis Based on Molecular Similarity, Connor W. Coley, Luke Rogers, William H. Green, and Klavs F. Jensen, 2017
+* Computer-Assisted Retrosynthesis Based on Molecular Similarity, Connor W. Coley, Luke Rogers, William H. Green, and Klavs F. Jensen, 2017
 
-### ADMET
+#### ADMET
 
 * XenoSite: Accurately Predicting CYP-Mediated Sites of Metabolism with Neural Networks, Jed Zaretzki, Matthew Matlock, and S. Joshua Swamidass, 2013 (代谢位点，氘代）
   
-### 分子能预测 (energy, potentials)
+#### 分子能预测 (energy, potentials)
 
 * **Atom-centered symmetry** functions for constructing high-dimensional neural network potentials, Jörg Behler, 2011
   >PESs (potential energy surface, atomic positions --> **symmetric function**)
 
-### 分子生成 (generating molecules)
+#### 分子生成 (generating molecules)
 
 * Generating Focussed Molecule Libraries for Drug Discovery with Recurrent Neural Networks, Marwin HS Segler, Thierry Kogej, Christian Tyrchan and Mark P Waller, 2017
-  >In de novo drug design, computational strategies are used to generate novel molecules with good affinity to the desired biological target. In this work, we show that recurrent neural networks can be trained as generative models for molecular structures, similar to statistical language models in natural language processing. We demonstrate that the properties of the generated molecules correlate very well with the properties of the molecules used to train the model. In order to enrich libraries with molecules active towards a given biological target, we propose to fine-tune the model with small sets of molecules, which are known to be active against that target.
-Against Staphylococcus aureus, the model reproduced 14% of 6051 hold-out test molecules that medicinal chemists designed, whereas against Plasmodium falciparum (Malaria) it reproduced 28% of 1240 test molecules. When coupled with a scoring function, our model can perform the complete de novo drug design cycle to generate large sets of novel molecules for drug discovery.
+  >In de novo drug design, computational strategies are used to generate novel molecules with good affinity to the desired biological target. In this work, we show that recurrent neural networks can be trained as generative models for molecular structures, similar to statistical language models in natural language processing. We demonstrate that the properties of the generated molecules correlate very well with the properties of the molecules used to train the model. In order to enrich libraries with molecules active towards a given biological target, we propose to fine-tune the model with small sets of molecules, which are known to be active against that target. Against Staphylococcus aureus, the model reproduced 14% of 6051 hold-out test molecules that medicinal chemists designed, whereas against Plasmodium falciparum (Malaria) it reproduced 28% of 1240 test molecules. When coupled with a scoring function, our model can perform the complete de novo drug design cycle to generate large sets of novel molecules for drug discovery.
 
 * ChemTS: An Efficient Python Library for de novo Molecular Generation, Xiufeng Yang, Jinzhe Zhang, Kazuki Yoshizoe, Kei Terayama, and Koji Tsuda, 2017 (RNN+MCTS)
 
 * MDTS: automatic complex materials design using Monte Carlo tree search, Thaer M. Dieb, Shenghong Ju, Kazuki Yoshizoe, Zhufeng Hou, Junichiro Shiomi, and Koji Tsuda, 2017
 
-### 打分 (protein-ligand scoring)
+#### 蛋白质+小分子亲和力 (Binding affinity)
 
 * Protein-Ligand Scoring with Convolutional Neural Networks (Matthew Ragoza, Joshua Hochuli, Elisa Idrobo, Jocelyn Sunseri, and David Ryan Koes, 2016)
 
@@ -64,14 +63,14 @@ Against Staphylococcus aureus, the model reproduced 14% of 6051 hold-out test mo
 * Performance of machine-learning scoring functions in structure-based virtual screening, Maciej Wójcikowski, Pedro J. Ballester & Pawel Siedlecki, 2016
 
 
-### 蛋白结合位点 (binding-site)
+#### 蛋白结合位点 (binding-site)
 * DeepSite: Protein binding site predictor using 3D-convolutional neural networks
-  将蛋白质的 3D 数据进行体素化，从而将其看作 3D 的 image（并有多个channels）；以此为输入预测每个体素是 binding-site 的概率。类似于图片的 segmentaion 模型
+  >将蛋白质的 3D 数据进行体素化，从而将其看作 3D 的 image（并有多个channels）；以此为输入预测每个体素是 binding-site 的概率。类似于图片的 segmentaion 模型
 
 * A simple method for finding a protein’s ligand-binding pockets, Seyed Majid Saberi Fathi and Jack A Tuszynski, 2014
 
 
-### 非监督式学习
+#### 非监督式学习
 * Unsupervised representation learning with deep convolutional generative adversarial networks
 
 * Seq2seq Fingerprint: An Unsupervised Deep Molecular Embedding for Drug Discovery, Zheng Xu etc. (2017)
@@ -79,13 +78,15 @@ Against Staphylococcus aureus, the model reproduced 14% of 6051 hold-out test mo
   may be usefull to chem molecules/protein datasets
 
 
-### 蛋白质二级结构预测
+#### 蛋白质二级结构预测
 
 * Protein structure [link](http://www.particlesciences.com/docs/technical_briefs/TB_8.pdf)
-  一篇介绍蛋白质结构的短篇（仅两页）
+  
+    一篇介绍蛋白质结构的短篇（仅两页）
 
 * Predicting Backbone Calpha angles and dihedrals from protein sequences by stacked sparse auto-encoder deep neural network (2014)
-  早期的一篇利用神经网络模型来预测 theta 和 tau，（之前的模型都是预测 helix, sheet, coil 和 phi, psi)
+
+    早期的一篇利用神经网络模型来预测 theta 和 tau，（之前的模型都是预测 helix, sheet, coil 和 phi, psi)
 
 * Improving prediction of secondary structure, local backbone angles, and solvent accessible surface area of proteins by iterative deep learning (2015)
   利用迭代的结构来预测二级结构
