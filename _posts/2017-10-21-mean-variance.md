@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Stastics 
+title: stastics tips
 date: 2017-10-21
 ---
 

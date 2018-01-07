@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 评价指标--Metrics
+title: 评价指标--metrics
 date: 2017-02-08
 categories: jekyll update
 comments: true

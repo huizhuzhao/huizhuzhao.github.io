@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Numpy func
+title: numpy func
 date: 2017-03-25
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Molecule 
+title: molecule 
 image_path: http://obmpvqs90.bkt.clouddn.com/c1ccccc1o.jpg
 ---
 
@@ -14,7 +14,7 @@ Source [wiki](https://en.wikipedia.org/wiki/Cyclohexanol)
 ![](http://olcglpvgr.bkt.clouddn.com/c1ccccc1o.jpg?imageView2/2/w/200)
 
 ----
-## Paper list
+## paper list
 
 #### 综述
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: RNN--addition
+title: rnn--addition
 date: 2017-03-25
 ---
 

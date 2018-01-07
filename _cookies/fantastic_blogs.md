@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Fantastic ML blogs
+title: fantastic ML blogs
 ---
 
 * [colah's blog][colah-blog]

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Github projects
+title: github projects
 ---
 
 * Harvard Intelligent Probabilistic Systems Group ([HIPSG](https://github.com/HIPS))
