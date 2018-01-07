@@ -13,24 +13,26 @@ Source [wiki](https://en.wikipedia.org/wiki/Cyclohexanol)
 
 ![](http://olcglpvgr.bkt.clouddn.com/c1ccccc1o.jpg?imageView2/2/w/200)
 
+----
+## Paper list
 
-## 综述
+### 综述
 
 * Drug discovery effectiveness from the standpoint of therapeutic mechanisms and indications，Hsin-Pei Shih1, Xiaodan Zhang2 and Alex M. Aronov1, 2017
 
 * Opportunities and obstacles for deep learning in biology and medicine. https://greenelab.github.io/deep-review/
 
 
-### 小分子矢量化
+#### 小分子矢量化
 
 * Convolutional Embedding of Attributed Molecular Graphs for Physical Property Prediction (Connor W. Coley, Regina Barzilay, William H. Green, Tommi S. Jaakkola, and Klavs F. Jensen, 2017)
 
 * **Learning Graph Representations with Embedding Propagation**, Alberto García-Durán, Mathias Niepert, (NIPS 2017)
 
 
-### 分子相似性 Molecular Similarity
+* 分子相似性 Molecular Similarity
 
-* Computer-Assisted Retrosynthesis Based on Molecular Similarity, Connor W. Coley, Luke Rogers, William H. Green, and Klavs F. Jensen, 2017
+Computer-Assisted Retrosynthesis Based on Molecular Similarity, Connor W. Coley, Luke Rogers, William H. Green, and Klavs F. Jensen, 2017
 
 ### ADMET
 
