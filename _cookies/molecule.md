@@ -24,6 +24,7 @@ Source [wiki](https://en.wikipedia.org/wiki/Cyclohexanol)
 
 
 #### 小分子矢量化
+* Convolutional Networks on Graphs for Learning Molecular Fingerprints. David Duvenaud, Dougal Maclaurin, Jorge Aguilera-Iparraguirre Rafael G ́omez-Bombarelli, Timothy Hirzel, Al ́an Aspuru-Guzik, Ryan P. Adams. Harvard University (2015)
 
 * Convolutional Embedding of Attributed Molecular Graphs for Physical Property Prediction (Connor W. Coley, Regina Barzilay, William H. Green, Tommi S. Jaakkola, and Klavs F. Jensen, 2017)
 
