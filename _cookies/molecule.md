@@ -112,6 +112,7 @@ Source [wiki](https://en.wikipedia.org/wiki/Cyclohexanol)
 
     may be usefull to chem molecules/protein datasets
 
+* Visualizing Data using t-SNE. Laurens van der Maaten, Geoffrey Hinton. (2008) ([blog](https://lvdmaaten.github.io/tsne/))
 
 #### 多任务学习/迁移学习 (Multitask Learning/transfer learning)
 
