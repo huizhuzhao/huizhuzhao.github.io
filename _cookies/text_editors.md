@@ -13,6 +13,9 @@ title: tools
 ---
 ## learning list
 * C++ 
+ 
+  http://www.learncpp.com/
+
 * tensorflow slim/sonnet
 
 ---
