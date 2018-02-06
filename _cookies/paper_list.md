@@ -1,6 +1,6 @@
 ---
 layout: page
-title: molecule 
+title: papers
 image_path: http://obmpvqs90.bkt.clouddn.com/c1ccccc1o.jpg
 ---
 
@@ -43,6 +43,9 @@ Source [wiki](https://en.wikipedia.org/wiki/Cyclohexanol)
 
 * **Atom-centered symmetry** functions for constructing high-dimensional neural network potentials, Jörg Behler, 2011
   >PESs (potential energy surface, atomic positions --> **symmetric function**)
+  
+* Quantum-chemical insights from deep tensor neural networks. Kristof T. Schütt, Farhad Arbabzadah, Stefan Chmiela, Klaus R. Müller & Alexandre Tkatchenko. (2016 DTNN)
+
 
 #### 分子生成 (generating molecules)
 
@@ -74,7 +77,8 @@ Source [wiki](https://en.wikipedia.org/wiki/Cyclohexanol)
 * Analysis of deep learning methods for blind protein contact prediction in CASP12, Sheng Wang, Siqi Sun and Jinbo Xu, 2017
   >Following the CASP definition, we say two residues form a contact if in the native structure, the distance of their Cβ atoms is less than 8Å
   
-  
+* Prediction of amino acid side chain conformation using a deep neural network. Ke Liu , Xiangyan Sun , Jun Ma , Zhenyu Zhou , Qilin Dong , Shengwen Peng ,Junqiu Wu, Suocheng Tan, Günter Blobel, and Jie Fan. (2017, Accutar)
+
 #### 蛋白质矢量化
 
 * Predicting protein-protein interactions based only on sequences information. Shen JW, et al. Proc Natl Acad Sci U S A. 2007;104(11):4337–41. (Cojoint traid method)
@@ -85,6 +89,7 @@ Source [wiki](https://en.wikipedia.org/wiki/Cyclohexanol)
     
     计算序列中不同位置之间的相关性 (Autocovariance method)
 
+Continuous Distributed Representation of Biological Sequences for Deep Proteomics and Genomics. Ehsaneddin Asgari, Mohammad R. K. Mofrad. (2015) **ProtVec**
 
 #### 蛋白质+小分子亲和力 (Binding affinity)
 
@@ -125,6 +130,26 @@ Source [wiki](https://en.wikipedia.org/wiki/Cyclohexanol)
 * Low Data Drug Discovery with One-shot Learning, Han Altae-Tran, Bharath Ramsundar, Aneesh S. Pappu, and Vijay Pande, (2016)
 
 * Active One-shot Learning, Mark Woodward, Chelsea Finn, (2017)
+
+#### Graphs
+
+* Spectral Networks and Deep Locally Connected Networks on Graphs. Joan Bruna, Wojciech Zaremba, Arthur Szlam, Yann LeCun. (2014)
+
+* Convolutional Neural Networks on Graphs with Fast Localized Spectral Filtering. Michaël Defferrard Xavier Bresson Pierre Vandergheynst. (2017)
+
+* Learning Graph Representations with Embedding Propagation, Alberto García-Durán, Mathias Niepert, (NIPS 2017)
+
+* Adaptive Graph Convolutional Neural Networks. Ruoyu Li, Sheng Wang, Feiyun Zhu, Junzhou Huang. (2018)
+
+* Convolutional Networks on Graphs for Learning Molecular Fingerprints. David Duvenaud, Dougal Maclaurin†, Jorge Aguilera-Iparraguirre, Rafael Gomez-Bombarelli, Timothy Hirzel, Alan Aspuru-Guzik, Ryan P. Adams. (2015)
+
+* Semi-supervised classification with graph convolutional networks. Thomas N. Kipf, Max Welling. (2017)
+
+* Graph Partition
+
+  http://glaros.dtc.umn.edu/gkhome/metis/metis/publications
+  
+* Covariant compositional networks for learning graphs. Risi Kondor, Hy Truong Son, Horace Pan, Brandon Anderson, Shubhendu Trivedi. (2018) [paper](https://arxiv.org/abs/1801.02144)
 
 <!--
 ![c1ccccc1o](/images/molecule/c1ccccc1o.png?imageView2/2/h/20)
