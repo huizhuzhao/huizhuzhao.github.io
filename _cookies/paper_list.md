@@ -103,11 +103,11 @@ Continuous Distributed Representation of Biological Sequences for Deep Proteomic
 
 
 #### 蛋白结合位点 (binding-site)
-* DeepSite: Protein binding site predictor using 3D-convolutional neural networks
+* DeepSite: Protein binding site predictor using 3D-convolutional neural networks. J. Jime ́nez, S. Doerr, G. Martınez-Rosell, A. S. Rose and G. De Fabritiis
   
     将蛋白质的 3D 数据进行体素化，从而将其看作 3D 的 image（并有多个channels）；以此为输入预测每个体素是 binding-site 的概率。类似于图片的 segmentaion 模型
 
-* A simple method for finding a protein’s ligand-binding pockets, Seyed Majid Saberi Fathi and Jack A Tuszynski, 2014
+* A simple method for finding a protein’s ligand-binding pockets. Seyed Majid Saberi Fathi and Jack A Tuszynski, 2014
 
 
 #### 非监督式学习
