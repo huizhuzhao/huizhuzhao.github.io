@@ -85,7 +85,7 @@ Source [wiki](https://en.wikipedia.org/wiki/Cyclohexanol)
     
     将20种氨基酸分为7组，然后对序列采用宽度为3的滑窗计算频率
 
-* Predicting protein-protein interactions from primary protein sequences using a novel multi-scale local feature representation scheme and the random forest. You ZH, et al. PLoS One. 2015;10(5):e0125811
+* Predicting protein-protein interactions from primary protein sequences using a novel multi-scale local representation scheme and the random forest. You ZH, et al. PLoS One. 2015;10(5):e0125811
     
     计算序列中不同位置之间的相关性 (Autocovariance method)
 
@@ -101,6 +101,8 @@ Continuous Distributed Representation of Biological Sequences for Deep Proteomic
 
 * Performance of machine-learning scoring functions in structure-based virtual screening, Maciej Wójcikowski, Pedro J. Ballester & Pawel Siedlecki, 2016
 
+* Deep learning with feature embedding for compound-protein interaction prediction. Fangping Wan, Jianyang (Michael) Zeng. (2016)
+> 预测 compound-protein interaction
 
 #### 蛋白结合位点 (binding-site)
 * DeepSite: Protein binding site predictor using 3D-convolutional neural networks. J. Jime ́nez, S. Doerr, G. Martınez-Rosell, A. S. Rose and G. De Fabritiis
