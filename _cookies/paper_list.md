@@ -46,6 +46,7 @@ Source [wiki](https://en.wikipedia.org/wiki/Cyclohexanol)
   
 * Quantum-chemical insights from deep tensor neural networks. Kristof T. Schütt, Farhad Arbabzadah, Stefan Chmiela, Klaus R. Müller & Alexandre Tkatchenko. (2016 DTNN)
 
+* SchNet: A continuous-filter convolutional neural network for modeling quantum interactions. K. T. Schütt, P.-J. Kindermans 1 , H. E. Sauceda, S. Chmiela, A. Tkatchenko, K.-R. Müller. (2017)
 
 #### 分子生成 (generating molecules)
 
