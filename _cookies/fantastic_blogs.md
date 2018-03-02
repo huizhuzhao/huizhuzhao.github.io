@@ -102,6 +102,8 @@ title: fantastic ML blogs
 * 一位自然语言处理大牛的博客
 
   [http://sebastianruder.com/index.html#open](http://sebastianruder.com/index.html#open)
+  
+  [http://ruder.io/](http://ruder.io/)
 
 * **i am trask** A Machine Learning Craftsmanship Blog
   [http://iamtrask.github.io/](http://iamtrask.github.io/)
