@@ -140,6 +140,8 @@ title: fantastic ML blogs
 * [Patricia Bento](https://www.ebi.ac.uk/about/people/patricia-bento) (A Research Institute)
 ![](/images/cookies/patricia.png)
   
+* [Positive-unlabeled learning](https://roywright.me/2017/11/16/positive-unlabeled-learning/)
+
 
 [gitxiv]: http://www.gitxiv.com/
 [karpathy-blog]: http://karpathy.github.io/
